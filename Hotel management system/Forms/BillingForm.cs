@@ -23,6 +23,7 @@ namespace Hotel_management_system.Forms
         public BillingForm()
         {
             InitializeComponent();
+            this.BackColor = Color.Black;
             LoadBills();
             SetupDataGridView();
             SetupPrintDocument();
@@ -41,6 +42,19 @@ namespace Hotel_management_system.Forms
         private void SetupPrintDocument()
         {
             printDocument.PrintPage += PrintDocument_PrintPage;
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            // Enable Liquid Glass Effect
+            int backdropType = (int)DwmApi.DWM_SYSTEMBACKDROP_TYPE.DWMSBT_TRANSIENTWINDOW;
+            DwmApi.DwmSetWindowAttribute(this.Handle, (int)DwmApi.DWMWINDOWATTRIBUTE.DWMWA_SYSTEMBACKDROP_TYPE, ref backdropType, sizeof(int));
+
+            // Enable Dark Mode Frame
+            int darkMode = 1;
+            DwmApi.DwmSetWindowAttribute(this.Handle, (int)DwmApi.DWMWINDOWATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE, ref darkMode, sizeof(int));
         }
 
         private void LoadBills()

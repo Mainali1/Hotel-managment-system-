@@ -1,12 +1,53 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|f:\\projects\\collage\\hotel management system\\hotel management system\\forms\\billingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|solutionrelative:forms\\billingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|f:\\projects\\collage\\hotel management system\\hotel management system\\forms\\billingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|solutionrelative:forms\\billingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BillingForm.cs",
+              "DocumentMoniker": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\Forms\\BillingForm.cs",
+              "RelativeDocumentMoniker": "Forms\\BillingForm.cs",
+              "ToolTip": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\Forms\\BillingForm.cs*",
+              "RelativeToolTip": "Forms\\BillingForm.cs*",
+              "ViewState": "AgIAAMgAAAAAAAAAAAAiwNcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T11:43:43.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BillingForm.cs [Design]",
+              "DocumentMoniker": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\Forms\\BillingForm.cs",
+              "RelativeDocumentMoniker": "Forms\\BillingForm.cs",
+              "ToolTip": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\Forms\\BillingForm.cs [Design]*",
+              "RelativeToolTip": "Forms\\BillingForm.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T11:18:47.571Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
