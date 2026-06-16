@@ -1,0 +1,4 @@
+F:\Projects\collage\Hotel management system\Hotel management system\obj\Debug\Hotel management system.csproj.AssemblyReference.cache
+F:\Projects\collage\Hotel management system\Hotel management system\obj\Debug\Hotel_management_system.Properties.Resources.resources
+F:\Projects\collage\Hotel management system\Hotel management system\obj\Debug\Hotel management system.csproj.GenerateResource.cache
+F:\Projects\collage\Hotel management system\Hotel management system\obj\Debug\Hotel management system.csproj.CoreCompileInputs.cache
