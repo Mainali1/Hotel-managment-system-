@@ -60,230 +60,305 @@ namespace Hotel_management_system.Forms
             this.grpFilter = new GroupBox();
 
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
+            this.panelForm.SuspendLayout();
+            this.panelGrid.SuspendLayout();
+            this.grpFilter.SuspendLayout();
             this.SuspendLayout();
 
-            this.ClientSize = new System.Drawing.Size(900, 650);
+            //
+            // lblTitle
+            //
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Text = "ROOM MANAGEMENT";
+            this.lblTitle.Font = new Font("Courier New", 16, FontStyle.Bold);
+            this.lblTitle.ForeColor = Color.FromArgb(0, 0, 0);
+            this.lblTitle.Location = new Point(20, 20);
+            this.lblTitle.Size = new Size(300, 30);
+
+            //
+            // grpFilter
+            //
+            this.grpFilter.Name = "grpFilter";
+            this.grpFilter.Text = "FILTER BY STATUS";
+            this.grpFilter.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.grpFilter.Location = new Point(340, 60);
+            this.grpFilter.Size = new Size(540, 50);
+
+            //
+            // lblFilterStatus
+            //
+            this.lblFilterStatus.Name = "lblFilterStatus";
+            this.lblFilterStatus.Text = "STATUS:";
+            this.lblFilterStatus.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.lblFilterStatus.Location = new Point(15, 22);
+            this.lblFilterStatus.Size = new Size(60, 20);
+
+            //
+            // cmbFilterStatus
+            //
+            this.cmbFilterStatus.Name = "cmbFilterStatus";
+            this.cmbFilterStatus.Location = new Point(80, 18);
+            this.cmbFilterStatus.Size = new Size(200, 25);
+            this.cmbFilterStatus.Font = new Font("Courier New", 10);
+            this.cmbFilterStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.cmbFilterStatus.SelectedIndexChanged += new EventHandler(this.cmbFilterStatus_SelectedIndexChanged);
+
+            //
+            // panelForm
+            //
+            this.panelForm.Name = "panelForm";
+            this.panelForm.BackColor = Color.FromArgb(255, 255, 255);
+            this.panelForm.Location = new Point(20, 60);
+            this.panelForm.Size = new Size(300, 570);
+
+            //
+            // lblRoomID
+            //
+            this.lblRoomID.Name = "lblRoomID";
+            this.lblRoomID.Text = "ROOM ID:";
+            this.lblRoomID.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblRoomID.Location = new Point(15, 30);
+            this.lblRoomID.Size = new Size(120, 15);
+
+            //
+            // txtRoomID
+            //
+            this.txtRoomID.Name = "txtRoomID";
+            this.txtRoomID.Location = new Point(15, 48);
+            this.txtRoomID.Size = new Size(260, 25);
+            this.txtRoomID.Font = new Font("Courier New", 10);
+            this.txtRoomID.ReadOnly = true;
+            this.txtRoomID.BackColor = Color.FromArgb(230, 230, 230);
+
+            //
+            // lblRoomNumber
+            //
+            this.lblRoomNumber.Name = "lblRoomNumber";
+            this.lblRoomNumber.Text = "ROOM NUMBER:";
+            this.lblRoomNumber.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblRoomNumber.Location = new Point(15, 70);
+            this.lblRoomNumber.Size = new Size(120, 15);
+
+            //
+            // txtRoomNumber
+            //
+            this.txtRoomNumber.Name = "txtRoomNumber";
+            this.txtRoomNumber.Location = new Point(15, 88);
+            this.txtRoomNumber.Size = new Size(260, 25);
+            this.txtRoomNumber.Font = new Font("Courier New", 10);
+
+            //
+            // lblRoomType
+            //
+            this.lblRoomType.Name = "lblRoomType";
+            this.lblRoomType.Text = "ROOM TYPE:";
+            this.lblRoomType.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblRoomType.Location = new Point(15, 110);
+            this.lblRoomType.Size = new Size(120, 15);
+
+            //
+            // cmbRoomType
+            //
+            this.cmbRoomType.Name = "cmbRoomType";
+            this.cmbRoomType.Location = new Point(15, 128);
+            this.cmbRoomType.Size = new Size(260, 25);
+            this.cmbRoomType.Font = new Font("Courier New", 10);
+            this.cmbRoomType.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            //
+            // lblRatePerNight
+            //
+            this.lblRatePerNight.Name = "lblRatePerNight";
+            this.lblRatePerNight.Text = "RATE/NIGHT:";
+            this.lblRatePerNight.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblRatePerNight.Location = new Point(15, 150);
+            this.lblRatePerNight.Size = new Size(120, 15);
+
+            //
+            // txtRatePerNight
+            //
+            this.txtRatePerNight.Name = "txtRatePerNight";
+            this.txtRatePerNight.Location = new Point(15, 168);
+            this.txtRatePerNight.Size = new Size(260, 25);
+            this.txtRatePerNight.Font = new Font("Courier New", 10);
+
+            //
+            // lblStatus
+            //
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Text = "STATUS:";
+            this.lblStatus.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblStatus.Location = new Point(15, 190);
+            this.lblStatus.Size = new Size(120, 15);
+
+            //
+            // cmbStatus
+            //
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Location = new Point(15, 208);
+            this.cmbStatus.Size = new Size(260, 25);
+            this.cmbStatus.Font = new Font("Courier New", 10);
+            this.cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            //
+            // lblDescription
+            //
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Text = "DESCRIPTION:";
+            this.lblDescription.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblDescription.Location = new Point(15, 230);
+            this.lblDescription.Size = new Size(120, 15);
+
+            //
+            // txtDescription
+            //
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Location = new Point(15, 248);
+            this.txtDescription.Size = new Size(260, 25);
+            this.txtDescription.Font = new Font("Courier New", 10);
+
+            //
+            // btnAdd
+            //
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Text = "NEW";
+            this.btnAdd.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnAdd.ForeColor = Color.FromArgb(0, 0, 0);
+            this.btnAdd.BackColor = Color.FromArgb(255, 255, 255);
+            this.btnAdd.FlatStyle = FlatStyle.Flat;
+            this.btnAdd.FlatAppearance.BorderSize = 1;
+            this.btnAdd.FlatAppearance.BorderColor = Color.FromArgb(0, 0, 0);
+            this.btnAdd.Location = new Point(15, 280);
+            this.btnAdd.Size = new Size(120, 35);
+            this.btnAdd.Cursor = Cursors.Hand;
+            this.btnAdd.Click += new EventHandler(this.btnAdd_Click);
+
+            //
+            // btnSave
+            //
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Text = "SAVE";
+            this.btnSave.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnSave.ForeColor = Color.FromArgb(255, 255, 255);
+            this.btnSave.BackColor = Color.FromArgb(50, 150, 50);
+            this.btnSave.FlatStyle = FlatStyle.Flat;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.Location = new Point(15, 325);
+            this.btnSave.Size = new Size(120, 35);
+            this.btnSave.Cursor = Cursors.Hand;
+            this.btnSave.Click += new EventHandler(this.btnSave_Click);
+
+            //
+            // btnUpdate
+            //
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnUpdate.ForeColor = Color.FromArgb(255, 255, 255);
+            this.btnUpdate.BackColor = Color.FromArgb(50, 50, 150);
+            this.btnUpdate.FlatStyle = FlatStyle.Flat;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.Location = new Point(15, 370);
+            this.btnUpdate.Size = new Size(120, 35);
+            this.btnUpdate.Cursor = Cursors.Hand;
+            this.btnUpdate.Click += new EventHandler(this.btnUpdate_Click);
+
+            //
+            // btnDelete
+            //
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnDelete.ForeColor = Color.FromArgb(255, 255, 255);
+            this.btnDelete.BackColor = Color.FromArgb(200, 50, 50);
+            this.btnDelete.FlatStyle = FlatStyle.Flat;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.Location = new Point(15, 415);
+            this.btnDelete.Size = new Size(120, 35);
+            this.btnDelete.Cursor = Cursors.Hand;
+            this.btnDelete.Click += new EventHandler(this.btnDelete_Click);
+
+            //
+            // btnClear
+            //
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnClear.ForeColor = Color.FromArgb(0, 0, 0);
+            this.btnClear.BackColor = Color.FromArgb(255, 255, 255);
+            this.btnClear.FlatStyle = FlatStyle.Flat;
+            this.btnClear.FlatAppearance.BorderSize = 1;
+            this.btnClear.FlatAppearance.BorderColor = Color.FromArgb(0, 0, 0);
+            this.btnClear.Location = new Point(15, 460);
+            this.btnClear.Size = new Size(120, 35);
+            this.btnClear.Cursor = Cursors.Hand;
+            this.btnClear.Click += new EventHandler(this.btnClear_Click);
+
+            //
+            // panelGrid
+            //
+            this.panelGrid.Name = "panelGrid";
+            this.panelGrid.BackColor = Color.FromArgb(255, 255, 255);
+            this.panelGrid.Location = new Point(340, 120);
+            this.panelGrid.Size = new Size(540, 510);
+
+            //
+            // dgvRooms
+            //
+            this.dgvRooms.Name = "dgvRooms";
+            this.dgvRooms.Dock = DockStyle.Fill;
+            this.dgvRooms.Location = new Point(0, 0);
+            this.dgvRooms.Size = new Size(540, 510);
+            this.dgvRooms.BorderStyle = BorderStyle.None;
+
+            //
+            // grpFilter contents
+            //
+            this.grpFilter.Controls.Add(this.lblFilterStatus);
+            this.grpFilter.Controls.Add(this.cmbFilterStatus);
+
+            //
+            // panelForm contents
+            //
+            this.panelForm.Controls.Add(this.lblRoomID);
+            this.panelForm.Controls.Add(this.txtRoomID);
+            this.panelForm.Controls.Add(this.lblRoomNumber);
+            this.panelForm.Controls.Add(this.txtRoomNumber);
+            this.panelForm.Controls.Add(this.lblRoomType);
+            this.panelForm.Controls.Add(this.cmbRoomType);
+            this.panelForm.Controls.Add(this.lblRatePerNight);
+            this.panelForm.Controls.Add(this.txtRatePerNight);
+            this.panelForm.Controls.Add(this.lblStatus);
+            this.panelForm.Controls.Add(this.cmbStatus);
+            this.panelForm.Controls.Add(this.lblDescription);
+            this.panelForm.Controls.Add(this.txtDescription);
+            this.panelForm.Controls.Add(this.btnAdd);
+            this.panelForm.Controls.Add(this.btnSave);
+            this.panelForm.Controls.Add(this.btnUpdate);
+            this.panelForm.Controls.Add(this.btnDelete);
+            this.panelForm.Controls.Add(this.btnClear);
+
+            //
+            // panelGrid contents
+            //
+            this.panelGrid.Controls.Add(this.dgvRooms);
+
+            //
+            // RoomForm
+            //
+            this.ClientSize = new Size(900, 650);
             this.Text = "Room Management";
-            this.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
-
-            lblTitle = new Label();
-            lblTitle.Text = "ROOM MANAGEMENT";
-            lblTitle.Font = new System.Drawing.Font("Courier New", 16, System.Drawing.FontStyle.Bold);
-            lblTitle.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            lblTitle.Location = new System.Drawing.Point(20, 20);
-            lblTitle.Size = new System.Drawing.Size(300, 30);
-            this.Controls.Add(lblTitle);
-
-            panelForm = new Panel();
-            panelForm.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            panelForm.Location = new System.Drawing.Point(20, 60);
-            panelForm.Size = new System.Drawing.Size(300, 570);
-            this.Controls.Add(panelForm);
-
-            grpFilter = new GroupBox();
-            grpFilter.Text = "FILTER BY STATUS";
-            grpFilter.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            grpFilter.Location = new System.Drawing.Point(340, 60);
-            grpFilter.Size = new System.Drawing.Size(540, 50);
-            this.Controls.Add(grpFilter);
-
-            lblFilterStatus = new Label();
-            lblFilterStatus.Text = "STATUS:";
-            lblFilterStatus.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            lblFilterStatus.Location = new System.Drawing.Point(15, 22);
-            grpFilter.Controls.Add(lblFilterStatus);
-
-            cmbFilterStatus = new ComboBox();
-            cmbFilterStatus.Location = new System.Drawing.Point(80, 18);
-            cmbFilterStatus.Size = new System.Drawing.Size(200, 25);
-            cmbFilterStatus.Font = new System.Drawing.Font("Courier New", 10);
-            cmbFilterStatus.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbFilterStatus.Name = "cmbFilterStatus";
-            cmbFilterStatus.SelectedIndexChanged += new EventHandler(cmbFilterStatus_SelectedIndexChanged);
-            grpFilter.Controls.Add(cmbFilterStatus);
-
-            int labelX = 15;
-            int labelWidth = 120;
-            int textX = 15;
-            int textWidth = 260;
-            int startY = 30;
-            int gap = 40;
-
-            lblRoomID = new Label();
-            lblRoomID.Text = "ROOM ID:";
-            lblRoomID.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblRoomID.Location = new System.Drawing.Point(labelX, startY);
-            lblRoomID.Size = new System.Drawing.Size(labelWidth, 15);
-            panelForm.Controls.Add(lblRoomID);
-
-            txtRoomID = new TextBox();
-            txtRoomID.Location = new System.Drawing.Point(textX, startY + 18);
-            txtRoomID.Size = new System.Drawing.Size(textWidth, 25);
-            txtRoomID.Font = new System.Drawing.Font("Courier New", 10);
-            txtRoomID.ReadOnly = true;
-            txtRoomID.BackColor = System.Drawing.Color.FromArgb(230, 230, 230);
-            txtRoomID.Name = "txtRoomID";
-            panelForm.Controls.Add(txtRoomID);
-
-            lblRoomNumber = new Label();
-            lblRoomNumber.Text = "ROOM NUMBER:";
-            lblRoomNumber.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblRoomNumber.Location = new System.Drawing.Point(labelX, startY + gap);
-            lblRoomNumber.Size = new System.Drawing.Size(labelWidth, 15);
-            panelForm.Controls.Add(lblRoomNumber);
-
-            txtRoomNumber = new TextBox();
-            txtRoomNumber.Location = new System.Drawing.Point(textX, startY + gap + 18);
-            txtRoomNumber.Size = new System.Drawing.Size(textWidth, 25);
-            txtRoomNumber.Font = new System.Drawing.Font("Courier New", 10);
-            txtRoomNumber.Name = "txtRoomNumber";
-            panelForm.Controls.Add(txtRoomNumber);
-
-            lblRoomType = new Label();
-            lblRoomType.Text = "ROOM TYPE:";
-            lblRoomType.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblRoomType.Location = new System.Drawing.Point(labelX, startY + gap * 2);
-            lblRoomType.Size = new System.Drawing.Size(labelWidth, 15);
-            panelForm.Controls.Add(lblRoomType);
-
-            cmbRoomType = new ComboBox();
-            cmbRoomType.Location = new System.Drawing.Point(textX, startY + gap * 2 + 18);
-            cmbRoomType.Size = new System.Drawing.Size(textWidth, 25);
-            cmbRoomType.Font = new System.Drawing.Font("Courier New", 10);
-            cmbRoomType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbRoomType.Name = "cmbRoomType";
-            panelForm.Controls.Add(cmbRoomType);
-
-            lblRatePerNight = new Label();
-            lblRatePerNight.Text = "RATE/NIGHT:";
-            lblRatePerNight.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblRatePerNight.Location = new System.Drawing.Point(labelX, startY + gap * 3);
-            lblRatePerNight.Size = new System.Drawing.Size(labelWidth, 15);
-            panelForm.Controls.Add(lblRatePerNight);
-
-            txtRatePerNight = new TextBox();
-            txtRatePerNight.Location = new System.Drawing.Point(textX, startY + gap * 3 + 18);
-            txtRatePerNight.Size = new System.Drawing.Size(textWidth, 25);
-            txtRatePerNight.Font = new System.Drawing.Font("Courier New", 10);
-            txtRatePerNight.Name = "txtRatePerNight";
-            panelForm.Controls.Add(txtRatePerNight);
-
-            lblStatus = new Label();
-            lblStatus.Text = "STATUS:";
-            lblStatus.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblStatus.Location = new System.Drawing.Point(labelX, startY + gap * 4);
-            lblStatus.Size = new System.Drawing.Size(labelWidth, 15);
-            panelForm.Controls.Add(lblStatus);
-
-            cmbStatus = new ComboBox();
-            cmbStatus.Location = new System.Drawing.Point(textX, startY + gap * 4 + 18);
-            cmbStatus.Size = new System.Drawing.Size(textWidth, 25);
-            cmbStatus.Font = new System.Drawing.Font("Courier New", 10);
-            cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbStatus.Name = "cmbStatus";
-            panelForm.Controls.Add(cmbStatus);
-
-            lblDescription = new Label();
-            lblDescription.Text = "DESCRIPTION:";
-            lblDescription.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblDescription.Location = new System.Drawing.Point(labelX, startY + gap * 5);
-            lblDescription.Size = new System.Drawing.Size(labelWidth, 15);
-            panelForm.Controls.Add(lblDescription);
-
-            txtDescription = new TextBox();
-            txtDescription.Location = new System.Drawing.Point(textX, startY + gap * 5 + 18);
-            txtDescription.Size = new System.Drawing.Size(textWidth, 25);
-            txtDescription.Font = new System.Drawing.Font("Courier New", 10);
-            txtDescription.Name = "txtDescription";
-            panelForm.Controls.Add(txtDescription);
-
-            int btnWidth = 120;
-            int btnHeight = 35;
-            int btnX = 15;
-            int btnStartY = 280;
-
-            btnAdd = new Button();
-            btnAdd.Text = "NEW";
-            btnAdd.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnAdd.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            btnAdd.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.FlatAppearance.BorderSize = 1;
-            btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            btnAdd.Location = new System.Drawing.Point(btnX, btnStartY);
-            btnAdd.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnAdd.Cursor = Cursors.Hand;
-            btnAdd.Click += new EventHandler(btnAdd_Click);
-            panelForm.Controls.Add(btnAdd);
-
-            btnSave = new Button();
-            btnSave.Text = "SAVE";
-            btnSave.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnSave.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnSave.BackColor = System.Drawing.Color.FromArgb(50, 150, 50);
-            btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.FlatAppearance.BorderSize = 0;
-            btnSave.Location = new System.Drawing.Point(btnX, btnStartY + 45);
-            btnSave.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnSave.Cursor = Cursors.Hand;
-            btnSave.Click += new EventHandler(btnSave_Click);
-            panelForm.Controls.Add(btnSave);
-
-            btnUpdate = new Button();
-            btnUpdate.Text = "UPDATE";
-            btnUpdate.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnUpdate.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnUpdate.BackColor = System.Drawing.Color.FromArgb(50, 50, 150);
-            btnUpdate.FlatStyle = FlatStyle.Flat;
-            btnUpdate.FlatAppearance.BorderSize = 0;
-            btnUpdate.Location = new System.Drawing.Point(btnX, btnStartY + 90);
-            btnUpdate.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnUpdate.Cursor = Cursors.Hand;
-            btnUpdate.Click += new EventHandler(btnUpdate_Click);
-            panelForm.Controls.Add(btnUpdate);
-
-            btnDelete = new Button();
-            btnDelete.Text = "DELETE";
-            btnDelete.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnDelete.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnDelete.BackColor = System.Drawing.Color.FromArgb(200, 50, 50);
-            btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.FlatAppearance.BorderSize = 0;
-            btnDelete.Location = new System.Drawing.Point(btnX, btnStartY + 135);
-            btnDelete.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnDelete.Cursor = Cursors.Hand;
-            btnDelete.Click += new EventHandler(btnDelete_Click);
-            panelForm.Controls.Add(btnDelete);
-
-            btnClear = new Button();
-            btnClear.Text = "CLEAR";
-            btnClear.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnClear.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            btnClear.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnClear.FlatStyle = FlatStyle.Flat;
-            btnClear.FlatAppearance.BorderSize = 1;
-            btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            btnClear.Location = new System.Drawing.Point(btnX, btnStartY + 180);
-            btnClear.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnClear.Cursor = Cursors.Hand;
-            btnClear.Click += new EventHandler(btnClear_Click);
-            panelForm.Controls.Add(btnClear);
-
-            panelGrid = new Panel();
-            panelGrid.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            panelGrid.Location = new System.Drawing.Point(340, 120);
-            panelGrid.Size = new System.Drawing.Size(540, 510);
-            this.Controls.Add(panelGrid);
-
-            dgvRooms = new DataGridView();
-            dgvRooms.Dock = DockStyle.Fill;
-            dgvRooms.Location = new System.Drawing.Point(0, 0);
-            dgvRooms.Size = new System.Drawing.Size(540, 510);
-            dgvRooms.Name = "dgvRooms";
-            dgvRooms.BorderStyle = BorderStyle.None;
-            panelGrid.Controls.Add(dgvRooms);
+            this.BackColor = Color.FromArgb(240, 240, 240);
+            this.Name = "RoomForm";
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.panelForm);
+            this.Controls.Add(this.grpFilter);
+            this.Controls.Add(this.panelGrid);
 
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).EndInit();
+            this.panelForm.ResumeLayout(false);
+            this.panelGrid.ResumeLayout(false);
+            this.grpFilter.ResumeLayout(false);
             this.ResumeLayout(false);
         }
 

@@ -60,229 +60,305 @@ namespace Hotel_management_system.Forms
             this.grpSearch = new GroupBox();
 
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookings)).BeginInit();
+            this.panelForm.SuspendLayout();
+            this.panelGrid.SuspendLayout();
+            this.grpSearch.SuspendLayout();
             this.SuspendLayout();
 
-            this.ClientSize = new System.Drawing.Size(1000, 700);
+            //
+            // lblTitle
+            //
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Text = "BOOKING MANAGEMENT";
+            this.lblTitle.Font = new Font("Courier New", 16, FontStyle.Bold);
+            this.lblTitle.ForeColor = Color.FromArgb(0, 0, 0);
+            this.lblTitle.Location = new Point(20, 20);
+            this.lblTitle.Size = new Size(350, 30);
+
+            //
+            // grpSearch
+            //
+            this.grpSearch.Name = "grpSearch";
+            this.grpSearch.Text = "SEARCH";
+            this.grpSearch.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.grpSearch.Location = new Point(380, 60);
+            this.grpSearch.Size = new Size(600, 50);
+
+            //
+            // lblSearch
+            //
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Text = "SEARCH:";
+            this.lblSearch.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.lblSearch.Location = new Point(15, 22);
+            this.lblSearch.Size = new Size(70, 20);
+
+            //
+            // txtSearch
+            //
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Font = new Font("Courier New", 10);
+            this.txtSearch.Location = new Point(90, 18);
+            this.txtSearch.Size = new Size(470, 25);
+            this.txtSearch.TextChanged += new EventHandler(this.txtSearch_TextChanged);
+
+            //
+            // panelForm
+            //
+            this.panelForm.Name = "panelForm";
+            this.panelForm.BackColor = Color.FromArgb(255, 255, 255);
+            this.panelForm.Location = new Point(20, 60);
+            this.panelForm.Size = new Size(340, 620);
+
+            //
+            // lblBookingID
+            //
+            this.lblBookingID.Name = "lblBookingID";
+            this.lblBookingID.Text = "BOOKING ID:";
+            this.lblBookingID.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblBookingID.Location = new Point(15, 30);
+            this.lblBookingID.Size = new Size(120, 15);
+
+            //
+            // txtBookingID
+            //
+            this.txtBookingID.Name = "txtBookingID";
+            this.txtBookingID.Location = new Point(15, 48);
+            this.txtBookingID.Size = new Size(300, 25);
+            this.txtBookingID.Font = new Font("Courier New", 10);
+            this.txtBookingID.ReadOnly = true;
+            this.txtBookingID.BackColor = Color.FromArgb(230, 230, 230);
+
+            //
+            // lblGuest
+            //
+            this.lblGuest.Name = "lblGuest";
+            this.lblGuest.Text = "GUEST:";
+            this.lblGuest.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblGuest.Location = new Point(15, 75);
+            this.lblGuest.Size = new Size(120, 15);
+
+            //
+            // cmbGuest
+            //
+            this.cmbGuest.Name = "cmbGuest";
+            this.cmbGuest.Location = new Point(15, 93);
+            this.cmbGuest.Size = new Size(300, 25);
+            this.cmbGuest.Font = new Font("Courier New", 10);
+            this.cmbGuest.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            //
+            // lblRoom
+            //
+            this.lblRoom.Name = "lblRoom";
+            this.lblRoom.Text = "ROOM:";
+            this.lblRoom.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblRoom.Location = new Point(15, 120);
+            this.lblRoom.Size = new Size(120, 15);
+
+            //
+            // cmbRoom
+            //
+            this.cmbRoom.Name = "cmbRoom";
+            this.cmbRoom.Location = new Point(15, 138);
+            this.cmbRoom.Size = new Size(300, 25);
+            this.cmbRoom.Font = new Font("Courier New", 10);
+            this.cmbRoom.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            //
+            // lblCheckInDate
+            //
+            this.lblCheckInDate.Name = "lblCheckInDate";
+            this.lblCheckInDate.Text = "CHECK-IN DATE:";
+            this.lblCheckInDate.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblCheckInDate.Location = new Point(15, 165);
+            this.lblCheckInDate.Size = new Size(120, 15);
+
+            //
+            // dtpCheckInDate
+            //
+            this.dtpCheckInDate.Name = "dtpCheckInDate";
+            this.dtpCheckInDate.Location = new Point(15, 183);
+            this.dtpCheckInDate.Size = new Size(300, 25);
+            this.dtpCheckInDate.Font = new Font("Courier New", 10);
+            this.dtpCheckInDate.Value = DateTime.Now;
+
+            //
+            // lblCheckOutDate
+            //
+            this.lblCheckOutDate.Name = "lblCheckOutDate";
+            this.lblCheckOutDate.Text = "CHECK-OUT DATE:";
+            this.lblCheckOutDate.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblCheckOutDate.Location = new Point(15, 210);
+            this.lblCheckOutDate.Size = new Size(120, 15);
+
+            //
+            // dtpCheckOutDate
+            //
+            this.dtpCheckOutDate.Name = "dtpCheckOutDate";
+            this.dtpCheckOutDate.Location = new Point(15, 228);
+            this.dtpCheckOutDate.Size = new Size(300, 25);
+            this.dtpCheckOutDate.Font = new Font("Courier New", 10);
+            this.dtpCheckOutDate.Value = DateTime.Now.AddDays(1);
+
+            //
+            // lblNotes
+            //
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Text = "NOTES:";
+            this.lblNotes.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblNotes.Location = new Point(15, 255);
+            this.lblNotes.Size = new Size(120, 15);
+
+            //
+            // txtNotes
+            //
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Location = new Point(15, 273);
+            this.txtNotes.Size = new Size(300, 25);
+            this.txtNotes.Font = new Font("Courier New", 10);
+
+            //
+            // btnBook
+            //
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Text = "BOOK";
+            this.btnBook.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnBook.ForeColor = Color.FromArgb(255, 255, 255);
+            this.btnBook.BackColor = Color.FromArgb(50, 150, 50);
+            this.btnBook.FlatStyle = FlatStyle.Flat;
+            this.btnBook.FlatAppearance.BorderSize = 0;
+            this.btnBook.Location = new Point(15, 280);
+            this.btnBook.Size = new Size(145, 38);
+            this.btnBook.Cursor = Cursors.Hand;
+            this.btnBook.Click += new EventHandler(this.btnBook_Click);
+
+            //
+            // btnCheckIn
+            //
+            this.btnCheckIn.Name = "btnCheckIn";
+            this.btnCheckIn.Text = "CHECK-IN";
+            this.btnCheckIn.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnCheckIn.ForeColor = Color.FromArgb(255, 255, 255);
+            this.btnCheckIn.BackColor = Color.FromArgb(50, 100, 200);
+            this.btnCheckIn.FlatStyle = FlatStyle.Flat;
+            this.btnCheckIn.FlatAppearance.BorderSize = 0;
+            this.btnCheckIn.Location = new Point(15, 328);
+            this.btnCheckIn.Size = new Size(145, 38);
+            this.btnCheckIn.Cursor = Cursors.Hand;
+            this.btnCheckIn.Click += new EventHandler(this.btnCheckIn_Click);
+
+            //
+            // btnCheckOut
+            //
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Text = "CHECK-OUT";
+            this.btnCheckOut.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnCheckOut.ForeColor = Color.FromArgb(255, 255, 255);
+            this.btnCheckOut.BackColor = Color.FromArgb(150, 100, 50);
+            this.btnCheckOut.FlatStyle = FlatStyle.Flat;
+            this.btnCheckOut.FlatAppearance.BorderSize = 0;
+            this.btnCheckOut.Location = new Point(15, 376);
+            this.btnCheckOut.Size = new Size(145, 38);
+            this.btnCheckOut.Cursor = Cursors.Hand;
+            this.btnCheckOut.Click += new EventHandler(this.btnCheckOut_Click);
+
+            //
+            // btnCancel
+            //
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Text = "CANCEL BOOKING";
+            this.btnCancel.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnCancel.ForeColor = Color.FromArgb(255, 255, 255);
+            this.btnCancel.BackColor = Color.FromArgb(200, 50, 50);
+            this.btnCancel.FlatStyle = FlatStyle.Flat;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.Location = new Point(15, 424);
+            this.btnCancel.Size = new Size(145, 38);
+            this.btnCancel.Cursor = Cursors.Hand;
+            this.btnCancel.Click += new EventHandler(this.btnCancel_Click);
+
+            //
+            // btnClear
+            //
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnClear.ForeColor = Color.FromArgb(0, 0, 0);
+            this.btnClear.BackColor = Color.FromArgb(255, 255, 255);
+            this.btnClear.FlatStyle = FlatStyle.Flat;
+            this.btnClear.FlatAppearance.BorderSize = 1;
+            this.btnClear.FlatAppearance.BorderColor = Color.FromArgb(0, 0, 0);
+            this.btnClear.Location = new Point(15, 472);
+            this.btnClear.Size = new Size(145, 38);
+            this.btnClear.Cursor = Cursors.Hand;
+            this.btnClear.Click += new EventHandler(this.btnClear_Click);
+
+            //
+            // panelGrid
+            //
+            this.panelGrid.Name = "panelGrid";
+            this.panelGrid.BackColor = Color.FromArgb(255, 255, 255);
+            this.panelGrid.Location = new Point(380, 120);
+            this.panelGrid.Size = new Size(600, 560);
+
+            //
+            // dgvBookings
+            //
+            this.dgvBookings.Name = "dgvBookings";
+            this.dgvBookings.Dock = DockStyle.Fill;
+            this.dgvBookings.Location = new Point(0, 0);
+            this.dgvBookings.Size = new Size(600, 560);
+            this.dgvBookings.BorderStyle = BorderStyle.None;
+
+            //
+            // grpSearch contents
+            //
+            this.grpSearch.Controls.Add(this.lblSearch);
+            this.grpSearch.Controls.Add(this.txtSearch);
+
+            //
+            // panelForm contents
+            //
+            this.panelForm.Controls.Add(this.lblBookingID);
+            this.panelForm.Controls.Add(this.txtBookingID);
+            this.panelForm.Controls.Add(this.lblGuest);
+            this.panelForm.Controls.Add(this.cmbGuest);
+            this.panelForm.Controls.Add(this.lblRoom);
+            this.panelForm.Controls.Add(this.cmbRoom);
+            this.panelForm.Controls.Add(this.lblCheckInDate);
+            this.panelForm.Controls.Add(this.dtpCheckInDate);
+            this.panelForm.Controls.Add(this.lblCheckOutDate);
+            this.panelForm.Controls.Add(this.dtpCheckOutDate);
+            this.panelForm.Controls.Add(this.lblNotes);
+            this.panelForm.Controls.Add(this.txtNotes);
+            this.panelForm.Controls.Add(this.btnBook);
+            this.panelForm.Controls.Add(this.btnCheckIn);
+            this.panelForm.Controls.Add(this.btnCheckOut);
+            this.panelForm.Controls.Add(this.btnCancel);
+            this.panelForm.Controls.Add(this.btnClear);
+
+            //
+            // panelGrid contents
+            //
+            this.panelGrid.Controls.Add(this.dgvBookings);
+
+            //
+            // BookingForm
+            //
+            this.ClientSize = new Size(1000, 700);
             this.Text = "Booking Management";
-            this.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
-
-            lblTitle = new Label();
-            lblTitle.Text = "BOOKING MANAGEMENT";
-            lblTitle.Font = new System.Drawing.Font("Courier New", 16, System.Drawing.FontStyle.Bold);
-            lblTitle.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            lblTitle.Location = new System.Drawing.Point(20, 20);
-            lblTitle.Size = new System.Drawing.Size(350, 30);
-            this.Controls.Add(lblTitle);
-
-            panelForm = new Panel();
-            panelForm.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            panelForm.Location = new System.Drawing.Point(20, 60);
-            panelForm.Size = new System.Drawing.Size(340, 620);
-            this.Controls.Add(panelForm);
-
-            grpSearch = new GroupBox();
-            grpSearch.Text = "SEARCH";
-            grpSearch.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            grpSearch.Location = new System.Drawing.Point(380, 60);
-            grpSearch.Size = new System.Drawing.Size(600, 50);
-            this.Controls.Add(grpSearch);
-
-            lblSearch = new Label();
-            lblSearch.Text = "SEARCH:";
-            lblSearch.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            lblSearch.Location = new System.Drawing.Point(15, 22);
-            grpSearch.Controls.Add(lblSearch);
-
-            txtSearch = new TextBox();
-            txtSearch.Font = new System.Drawing.Font("Courier New", 10);
-            txtSearch.Location = new System.Drawing.Point(90, 18);
-            txtSearch.Size = new System.Drawing.Size(470, 25);
-            txtSearch.Name = "txtSearch";
-            txtSearch.TextChanged += new EventHandler(txtSearch_TextChanged);
-            grpSearch.Controls.Add(txtSearch);
-
-            int labelX = 15;
-            int textX = 15;
-            int textWidth = 300;
-            int startY = 30;
-            int gap = 45;
-
-            lblBookingID = new Label();
-            lblBookingID.Text = "BOOKING ID:";
-            lblBookingID.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblBookingID.Location = new System.Drawing.Point(labelX, startY);
-            lblBookingID.Size = new System.Drawing.Size(120, 15);
-            panelForm.Controls.Add(lblBookingID);
-
-            txtBookingID = new TextBox();
-            txtBookingID.Location = new System.Drawing.Point(textX, startY + 18);
-            txtBookingID.Size = new System.Drawing.Size(textWidth, 25);
-            txtBookingID.Font = new System.Drawing.Font("Courier New", 10);
-            txtBookingID.ReadOnly = true;
-            txtBookingID.BackColor = System.Drawing.Color.FromArgb(230, 230, 230);
-            txtBookingID.Name = "txtBookingID";
-            panelForm.Controls.Add(txtBookingID);
-
-            lblGuest = new Label();
-            lblGuest.Text = "GUEST:";
-            lblGuest.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblGuest.Location = new System.Drawing.Point(labelX, startY + gap);
-            lblGuest.Size = new System.Drawing.Size(120, 15);
-            panelForm.Controls.Add(lblGuest);
-
-            cmbGuest = new ComboBox();
-            cmbGuest.Location = new System.Drawing.Point(textX, startY + gap + 18);
-            cmbGuest.Size = new System.Drawing.Size(textWidth, 25);
-            cmbGuest.Font = new System.Drawing.Font("Courier New", 10);
-            cmbGuest.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbGuest.Name = "cmbGuest";
-            panelForm.Controls.Add(cmbGuest);
-
-            lblRoom = new Label();
-            lblRoom.Text = "ROOM:";
-            lblRoom.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblRoom.Location = new System.Drawing.Point(labelX, startY + gap * 2);
-            lblRoom.Size = new System.Drawing.Size(120, 15);
-            panelForm.Controls.Add(lblRoom);
-
-            cmbRoom = new ComboBox();
-            cmbRoom.Location = new System.Drawing.Point(textX, startY + gap * 2 + 18);
-            cmbRoom.Size = new System.Drawing.Size(textWidth, 25);
-            cmbRoom.Font = new System.Drawing.Font("Courier New", 10);
-            cmbRoom.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbRoom.Name = "cmbRoom";
-            panelForm.Controls.Add(cmbRoom);
-
-            lblCheckInDate = new Label();
-            lblCheckInDate.Text = "CHECK-IN DATE:";
-            lblCheckInDate.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblCheckInDate.Location = new System.Drawing.Point(labelX, startY + gap * 3);
-            lblCheckInDate.Size = new System.Drawing.Size(120, 15);
-            panelForm.Controls.Add(lblCheckInDate);
-
-            dtpCheckInDate = new DateTimePicker();
-            dtpCheckInDate.Location = new System.Drawing.Point(textX, startY + gap * 3 + 18);
-            dtpCheckInDate.Size = new System.Drawing.Size(textWidth, 25);
-            dtpCheckInDate.Font = new System.Drawing.Font("Courier New", 10);
-            dtpCheckInDate.Name = "dtpCheckInDate";
-            dtpCheckInDate.Value = DateTime.Now;
-            panelForm.Controls.Add(dtpCheckInDate);
-
-            lblCheckOutDate = new Label();
-            lblCheckOutDate.Text = "CHECK-OUT DATE:";
-            lblCheckOutDate.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblCheckOutDate.Location = new System.Drawing.Point(labelX, startY + gap * 4);
-            lblCheckOutDate.Size = new System.Drawing.Size(120, 15);
-            panelForm.Controls.Add(lblCheckOutDate);
-
-            dtpCheckOutDate = new DateTimePicker();
-            dtpCheckOutDate.Location = new System.Drawing.Point(textX, startY + gap * 4 + 18);
-            dtpCheckOutDate.Size = new System.Drawing.Size(textWidth, 25);
-            dtpCheckOutDate.Font = new System.Drawing.Font("Courier New", 10);
-            dtpCheckOutDate.Name = "dtpCheckOutDate";
-            dtpCheckOutDate.Value = DateTime.Now.AddDays(1);
-            panelForm.Controls.Add(dtpCheckOutDate);
-
-            lblNotes = new Label();
-            lblNotes.Text = "NOTES:";
-            lblNotes.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblNotes.Location = new System.Drawing.Point(labelX, startY + gap * 5);
-            lblNotes.Size = new System.Drawing.Size(120, 15);
-            panelForm.Controls.Add(lblNotes);
-
-            txtNotes = new TextBox();
-            txtNotes.Location = new System.Drawing.Point(textX, startY + gap * 5 + 18);
-            txtNotes.Size = new System.Drawing.Size(textWidth, 25);
-            txtNotes.Font = new System.Drawing.Font("Courier New", 10);
-            txtNotes.Name = "txtNotes";
-            panelForm.Controls.Add(txtNotes);
-
-            int btnWidth = 145;
-            int btnHeight = 38;
-            int btnX = 15;
-            int btnStartY = 280;
-
-            btnBook = new Button();
-            btnBook.Text = "BOOK";
-            btnBook.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnBook.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnBook.BackColor = System.Drawing.Color.FromArgb(50, 150, 50);
-            btnBook.FlatStyle = FlatStyle.Flat;
-            btnBook.FlatAppearance.BorderSize = 0;
-            btnBook.Location = new System.Drawing.Point(btnX, btnStartY);
-            btnBook.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnBook.Cursor = Cursors.Hand;
-            btnBook.Click += new EventHandler(btnBook_Click);
-            panelForm.Controls.Add(btnBook);
-
-            btnCheckIn = new Button();
-            btnCheckIn.Text = "CHECK-IN";
-            btnCheckIn.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnCheckIn.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnCheckIn.BackColor = System.Drawing.Color.FromArgb(50, 100, 200);
-            btnCheckIn.FlatStyle = FlatStyle.Flat;
-            btnCheckIn.FlatAppearance.BorderSize = 0;
-            btnCheckIn.Location = new System.Drawing.Point(btnX, btnStartY + 48);
-            btnCheckIn.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnCheckIn.Cursor = Cursors.Hand;
-            btnCheckIn.Click += new EventHandler(btnCheckIn_Click);
-            panelForm.Controls.Add(btnCheckIn);
-
-            btnCheckOut = new Button();
-            btnCheckOut.Text = "CHECK-OUT";
-            btnCheckOut.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnCheckOut.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnCheckOut.BackColor = System.Drawing.Color.FromArgb(150, 100, 50);
-            btnCheckOut.FlatStyle = FlatStyle.Flat;
-            btnCheckOut.FlatAppearance.BorderSize = 0;
-            btnCheckOut.Location = new System.Drawing.Point(btnX, btnStartY + 96);
-            btnCheckOut.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnCheckOut.Cursor = Cursors.Hand;
-            btnCheckOut.Click += new EventHandler(btnCheckOut_Click);
-            panelForm.Controls.Add(btnCheckOut);
-
-            btnCancel = new Button();
-            btnCancel.Text = "CANCEL BOOKING";
-            btnCancel.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnCancel.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnCancel.BackColor = System.Drawing.Color.FromArgb(200, 50, 50);
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.FlatAppearance.BorderSize = 0;
-            btnCancel.Location = new System.Drawing.Point(btnX, btnStartY + 144);
-            btnCancel.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnCancel.Cursor = Cursors.Hand;
-            btnCancel.Click += new EventHandler(btnCancel_Click);
-            panelForm.Controls.Add(btnCancel);
-
-            btnClear = new Button();
-            btnClear.Text = "CLEAR";
-            btnClear.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnClear.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            btnClear.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnClear.FlatStyle = FlatStyle.Flat;
-            btnClear.FlatAppearance.BorderSize = 1;
-            btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            btnClear.Location = new System.Drawing.Point(btnX, btnStartY + 192);
-            btnClear.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnClear.Cursor = Cursors.Hand;
-            btnClear.Click += new EventHandler(btnClear_Click);
-            panelForm.Controls.Add(btnClear);
-
-            panelGrid = new Panel();
-            panelGrid.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            panelGrid.Location = new System.Drawing.Point(380, 120);
-            panelGrid.Size = new System.Drawing.Size(600, 560);
-            this.Controls.Add(panelGrid);
-
-            dgvBookings = new DataGridView();
-            dgvBookings.Dock = DockStyle.Fill;
-            dgvBookings.Location = new System.Drawing.Point(0, 0);
-            dgvBookings.Size = new System.Drawing.Size(600, 560);
-            dgvBookings.Name = "dgvBookings";
-            dgvBookings.BorderStyle = BorderStyle.None;
-            panelGrid.Controls.Add(dgvBookings);
+            this.BackColor = Color.FromArgb(240, 240, 240);
+            this.Name = "BookingForm";
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.panelForm);
+            this.Controls.Add(this.grpSearch);
+            this.Controls.Add(this.panelGrid);
 
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookings)).EndInit();
+            this.panelForm.ResumeLayout(false);
+            this.panelGrid.ResumeLayout(false);
+            this.grpSearch.ResumeLayout(false);
             this.ResumeLayout(false);
         }
 

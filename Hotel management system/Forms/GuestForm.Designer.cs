@@ -60,227 +60,302 @@ namespace Hotel_management_system.Forms
             this.grpSearch = new GroupBox();
 
             ((System.ComponentModel.ISupportInitialize)(this.dgvGuests)).BeginInit();
+            this.panelForm.SuspendLayout();
+            this.panelGrid.SuspendLayout();
+            this.grpSearch.SuspendLayout();
             this.SuspendLayout();
 
-            this.ClientSize = new System.Drawing.Size(900, 650);
+            //
+            // lblTitle
+            //
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Text = "GUEST MANAGEMENT";
+            this.lblTitle.Font = new Font("Courier New", 16, FontStyle.Bold);
+            this.lblTitle.ForeColor = Color.FromArgb(0, 0, 0);
+            this.lblTitle.Location = new Point(20, 20);
+            this.lblTitle.Size = new Size(300, 30);
+
+            //
+            // grpSearch
+            //
+            this.grpSearch.Name = "grpSearch";
+            this.grpSearch.Text = "SEARCH";
+            this.grpSearch.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.grpSearch.Location = new Point(340, 60);
+            this.grpSearch.Size = new Size(540, 50);
+
+            //
+            // lblSearch
+            //
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Text = "SEARCH:";
+            this.lblSearch.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.lblSearch.Location = new Point(15, 22);
+            this.lblSearch.Size = new Size(70, 20);
+
+            //
+            // txtSearch
+            //
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Font = new Font("Courier New", 10);
+            this.txtSearch.Location = new Point(90, 18);
+            this.txtSearch.Size = new Size(400, 25);
+            this.txtSearch.TextChanged += new EventHandler(this.txtSearch_TextChanged);
+
+            //
+            // panelForm
+            //
+            this.panelForm.Name = "panelForm";
+            this.panelForm.BackColor = Color.FromArgb(255, 255, 255);
+            this.panelForm.Location = new Point(20, 60);
+            this.panelForm.Size = new Size(300, 570);
+
+            //
+            // lblGuestID
+            //
+            this.lblGuestID.Name = "lblGuestID";
+            this.lblGuestID.Text = "GUEST ID:";
+            this.lblGuestID.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblGuestID.Location = new Point(15, 30);
+            this.lblGuestID.Size = new Size(120, 15);
+
+            //
+            // txtGuestID
+            //
+            this.txtGuestID.Name = "txtGuestID";
+            this.txtGuestID.Location = new Point(15, 48);
+            this.txtGuestID.Size = new Size(260, 25);
+            this.txtGuestID.Font = new Font("Courier New", 10);
+            this.txtGuestID.ReadOnly = true;
+            this.txtGuestID.BackColor = Color.FromArgb(230, 230, 230);
+
+            //
+            // lblFullName
+            //
+            this.lblFullName.Name = "lblFullName";
+            this.lblFullName.Text = "FULL NAME:";
+            this.lblFullName.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblFullName.Location = new Point(15, 70);
+            this.lblFullName.Size = new Size(120, 15);
+
+            //
+            // txtFullName
+            //
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Location = new Point(15, 88);
+            this.txtFullName.Size = new Size(260, 25);
+            this.txtFullName.Font = new Font("Courier New", 10);
+
+            //
+            // lblPhone
+            //
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Text = "PHONE:";
+            this.lblPhone.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblPhone.Location = new Point(15, 110);
+            this.lblPhone.Size = new Size(120, 15);
+
+            //
+            // txtPhone
+            //
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Location = new Point(15, 128);
+            this.txtPhone.Size = new Size(260, 25);
+            this.txtPhone.Font = new Font("Courier New", 10);
+
+            //
+            // lblEmail
+            //
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Text = "EMAIL:";
+            this.lblEmail.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblEmail.Location = new Point(15, 150);
+            this.lblEmail.Size = new Size(120, 15);
+
+            //
+            // txtEmail
+            //
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Location = new Point(15, 168);
+            this.txtEmail.Size = new Size(260, 25);
+            this.txtEmail.Font = new Font("Courier New", 10);
+
+            //
+            // lblAddress
+            //
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Text = "ADDRESS:";
+            this.lblAddress.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblAddress.Location = new Point(15, 190);
+            this.lblAddress.Size = new Size(120, 15);
+
+            //
+            // txtAddress
+            //
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Location = new Point(15, 208);
+            this.txtAddress.Size = new Size(260, 25);
+            this.txtAddress.Font = new Font("Courier New", 10);
+
+            //
+            // lblNationalID
+            //
+            this.lblNationalID.Name = "lblNationalID";
+            this.lblNationalID.Text = "NATIONAL ID:";
+            this.lblNationalID.Font = new Font("Courier New", 8, FontStyle.Bold);
+            this.lblNationalID.Location = new Point(15, 230);
+            this.lblNationalID.Size = new Size(120, 15);
+
+            //
+            // txtNationalID
+            //
+            this.txtNationalID.Name = "txtNationalID";
+            this.txtNationalID.Location = new Point(15, 248);
+            this.txtNationalID.Size = new Size(260, 25);
+            this.txtNationalID.Font = new Font("Courier New", 10);
+
+            //
+            // btnAdd
+            //
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Text = "NEW";
+            this.btnAdd.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnAdd.ForeColor = Color.FromArgb(0, 0, 0);
+            this.btnAdd.BackColor = Color.FromArgb(255, 255, 255);
+            this.btnAdd.FlatStyle = FlatStyle.Flat;
+            this.btnAdd.FlatAppearance.BorderSize = 1;
+            this.btnAdd.FlatAppearance.BorderColor = Color.FromArgb(0, 0, 0);
+            this.btnAdd.Location = new Point(15, 280);
+            this.btnAdd.Size = new Size(120, 35);
+            this.btnAdd.Cursor = Cursors.Hand;
+            this.btnAdd.Click += new EventHandler(this.btnAdd_Click);
+
+            //
+            // btnSave
+            //
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Text = "SAVE";
+            this.btnSave.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnSave.ForeColor = Color.FromArgb(255, 255, 255);
+            this.btnSave.BackColor = Color.FromArgb(50, 150, 50);
+            this.btnSave.FlatStyle = FlatStyle.Flat;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.Location = new Point(15, 325);
+            this.btnSave.Size = new Size(120, 35);
+            this.btnSave.Cursor = Cursors.Hand;
+            this.btnSave.Click += new EventHandler(this.btnSave_Click);
+
+            //
+            // btnUpdate
+            //
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnUpdate.ForeColor = Color.FromArgb(255, 255, 255);
+            this.btnUpdate.BackColor = Color.FromArgb(50, 50, 150);
+            this.btnUpdate.FlatStyle = FlatStyle.Flat;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.Location = new Point(15, 370);
+            this.btnUpdate.Size = new Size(120, 35);
+            this.btnUpdate.Cursor = Cursors.Hand;
+            this.btnUpdate.Click += new EventHandler(this.btnUpdate_Click);
+
+            //
+            // btnDelete
+            //
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnDelete.ForeColor = Color.FromArgb(255, 255, 255);
+            this.btnDelete.BackColor = Color.FromArgb(200, 50, 50);
+            this.btnDelete.FlatStyle = FlatStyle.Flat;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.Location = new Point(15, 415);
+            this.btnDelete.Size = new Size(120, 35);
+            this.btnDelete.Cursor = Cursors.Hand;
+            this.btnDelete.Click += new EventHandler(this.btnDelete_Click);
+
+            //
+            // btnClear
+            //
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.Font = new Font("Courier New", 9, FontStyle.Bold);
+            this.btnClear.ForeColor = Color.FromArgb(0, 0, 0);
+            this.btnClear.BackColor = Color.FromArgb(255, 255, 255);
+            this.btnClear.FlatStyle = FlatStyle.Flat;
+            this.btnClear.FlatAppearance.BorderSize = 1;
+            this.btnClear.FlatAppearance.BorderColor = Color.FromArgb(0, 0, 0);
+            this.btnClear.Location = new Point(15, 460);
+            this.btnClear.Size = new Size(120, 35);
+            this.btnClear.Cursor = Cursors.Hand;
+            this.btnClear.Click += new EventHandler(this.btnClear_Click);
+
+            //
+            // panelGrid
+            //
+            this.panelGrid.Name = "panelGrid";
+            this.panelGrid.BackColor = Color.FromArgb(255, 255, 255);
+            this.panelGrid.Location = new Point(340, 120);
+            this.panelGrid.Size = new Size(540, 510);
+
+            //
+            // dgvGuests
+            //
+            this.dgvGuests.Name = "dgvGuests";
+            this.dgvGuests.Dock = DockStyle.Fill;
+            this.dgvGuests.Location = new Point(0, 0);
+            this.dgvGuests.Size = new Size(540, 510);
+            this.dgvGuests.BorderStyle = BorderStyle.None;
+
+            //
+            // grpSearch contents
+            //
+            this.grpSearch.Controls.Add(this.lblSearch);
+            this.grpSearch.Controls.Add(this.txtSearch);
+
+            //
+            // panelForm contents
+            //
+            this.panelForm.Controls.Add(this.lblGuestID);
+            this.panelForm.Controls.Add(this.txtGuestID);
+            this.panelForm.Controls.Add(this.lblFullName);
+            this.panelForm.Controls.Add(this.txtFullName);
+            this.panelForm.Controls.Add(this.lblPhone);
+            this.panelForm.Controls.Add(this.txtPhone);
+            this.panelForm.Controls.Add(this.lblEmail);
+            this.panelForm.Controls.Add(this.txtEmail);
+            this.panelForm.Controls.Add(this.lblAddress);
+            this.panelForm.Controls.Add(this.txtAddress);
+            this.panelForm.Controls.Add(this.lblNationalID);
+            this.panelForm.Controls.Add(this.txtNationalID);
+            this.panelForm.Controls.Add(this.btnAdd);
+            this.panelForm.Controls.Add(this.btnSave);
+            this.panelForm.Controls.Add(this.btnUpdate);
+            this.panelForm.Controls.Add(this.btnDelete);
+            this.panelForm.Controls.Add(this.btnClear);
+
+            //
+            // panelGrid contents
+            //
+            this.panelGrid.Controls.Add(this.dgvGuests);
+
+            //
+            // GuestForm
+            //
+            this.ClientSize = new Size(900, 650);
             this.Text = "Guest Management";
-            this.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
-
-            lblTitle = new Label();
-            lblTitle.Text = "GUEST MANAGEMENT";
-            lblTitle.Font = new System.Drawing.Font("Courier New", 16, System.Drawing.FontStyle.Bold);
-            lblTitle.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            lblTitle.Location = new System.Drawing.Point(20, 20);
-            lblTitle.Size = new System.Drawing.Size(300, 30);
-            this.Controls.Add(lblTitle);
-
-            panelForm = new Panel();
-            panelForm.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            panelForm.Location = new System.Drawing.Point(20, 60);
-            panelForm.Size = new System.Drawing.Size(300, 570);
-            this.Controls.Add(panelForm);
-
-            grpSearch = new GroupBox();
-            grpSearch.Text = "SEARCH";
-            grpSearch.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            grpSearch.Location = new System.Drawing.Point(340, 60);
-            grpSearch.Size = new System.Drawing.Size(540, 50);
-            this.Controls.Add(grpSearch);
-
-            lblSearch = new Label();
-            lblSearch.Text = "SEARCH:";
-            lblSearch.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            lblSearch.Location = new System.Drawing.Point(15, 22);
-            grpSearch.Controls.Add(lblSearch);
-
-            txtSearch = new TextBox();
-            txtSearch.Font = new System.Drawing.Font("Courier New", 10);
-            txtSearch.Location = new System.Drawing.Point(90, 18);
-            txtSearch.Size = new System.Drawing.Size(400, 25);
-            txtSearch.Name = "txtSearch";
-            txtSearch.TextChanged += new EventHandler(txtSearch_TextChanged);
-            grpSearch.Controls.Add(txtSearch);
-
-            int labelX = 15;
-            int labelWidth = 120;
-            int textX = 15;
-            int textWidth = 260;
-            int startY = 30;
-            int gap = 40;
-
-            lblGuestID = new Label();
-            lblGuestID.Text = "GUEST ID:";
-            lblGuestID.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblGuestID.Location = new System.Drawing.Point(labelX, startY);
-            lblGuestID.Size = new System.Drawing.Size(labelWidth, 15);
-            panelForm.Controls.Add(lblGuestID);
-
-            txtGuestID = new TextBox();
-            txtGuestID.Location = new System.Drawing.Point(textX, startY + 18);
-            txtGuestID.Size = new System.Drawing.Size(textWidth, 25);
-            txtGuestID.Font = new System.Drawing.Font("Courier New", 10);
-            txtGuestID.ReadOnly = true;
-            txtGuestID.BackColor = System.Drawing.Color.FromArgb(230, 230, 230);
-            txtGuestID.Name = "txtGuestID";
-            panelForm.Controls.Add(txtGuestID);
-
-            lblFullName = new Label();
-            lblFullName.Text = "FULL NAME:";
-            lblFullName.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblFullName.Location = new System.Drawing.Point(labelX, startY + gap);
-            lblFullName.Size = new System.Drawing.Size(labelWidth, 15);
-            panelForm.Controls.Add(lblFullName);
-
-            txtFullName = new TextBox();
-            txtFullName.Location = new System.Drawing.Point(textX, startY + gap + 18);
-            txtFullName.Size = new System.Drawing.Size(textWidth, 25);
-            txtFullName.Font = new System.Drawing.Font("Courier New", 10);
-            txtFullName.Name = "txtFullName";
-            panelForm.Controls.Add(txtFullName);
-
-            lblPhone = new Label();
-            lblPhone.Text = "PHONE:";
-            lblPhone.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblPhone.Location = new System.Drawing.Point(labelX, startY + gap * 2);
-            lblPhone.Size = new System.Drawing.Size(labelWidth, 15);
-            panelForm.Controls.Add(lblPhone);
-
-            txtPhone = new TextBox();
-            txtPhone.Location = new System.Drawing.Point(textX, startY + gap * 2 + 18);
-            txtPhone.Size = new System.Drawing.Size(textWidth, 25);
-            txtPhone.Font = new System.Drawing.Font("Courier New", 10);
-            txtPhone.Name = "txtPhone";
-            panelForm.Controls.Add(txtPhone);
-
-            lblEmail = new Label();
-            lblEmail.Text = "EMAIL:";
-            lblEmail.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblEmail.Location = new System.Drawing.Point(labelX, startY + gap * 3);
-            lblEmail.Size = new System.Drawing.Size(labelWidth, 15);
-            panelForm.Controls.Add(lblEmail);
-
-            txtEmail = new TextBox();
-            txtEmail.Location = new System.Drawing.Point(textX, startY + gap * 3 + 18);
-            txtEmail.Size = new System.Drawing.Size(textWidth, 25);
-            txtEmail.Font = new System.Drawing.Font("Courier New", 10);
-            txtEmail.Name = "txtEmail";
-            panelForm.Controls.Add(txtEmail);
-
-            lblAddress = new Label();
-            lblAddress.Text = "ADDRESS:";
-            lblAddress.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblAddress.Location = new System.Drawing.Point(labelX, startY + gap * 4);
-            lblAddress.Size = new System.Drawing.Size(labelWidth, 15);
-            panelForm.Controls.Add(lblAddress);
-
-            txtAddress = new TextBox();
-            txtAddress.Location = new System.Drawing.Point(textX, startY + gap * 4 + 18);
-            txtAddress.Size = new System.Drawing.Size(textWidth, 25);
-            txtAddress.Font = new System.Drawing.Font("Courier New", 10);
-            txtAddress.Name = "txtAddress";
-            panelForm.Controls.Add(txtAddress);
-
-            lblNationalID = new Label();
-            lblNationalID.Text = "NATIONAL ID:";
-            lblNationalID.Font = new System.Drawing.Font("Courier New", 8, System.Drawing.FontStyle.Bold);
-            lblNationalID.Location = new System.Drawing.Point(labelX, startY + gap * 5);
-            lblNationalID.Size = new System.Drawing.Size(labelWidth, 15);
-            panelForm.Controls.Add(lblNationalID);
-
-            txtNationalID = new TextBox();
-            txtNationalID.Location = new System.Drawing.Point(textX, startY + gap * 5 + 18);
-            txtNationalID.Size = new System.Drawing.Size(textWidth, 25);
-            txtNationalID.Font = new System.Drawing.Font("Courier New", 10);
-            txtNationalID.Name = "txtNationalID";
-            panelForm.Controls.Add(txtNationalID);
-
-            int btnWidth = 120;
-            int btnHeight = 35;
-            int btnX = 15;
-            int btnStartY = 280;
-
-            btnAdd = new Button();
-            btnAdd.Text = "NEW";
-            btnAdd.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnAdd.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            btnAdd.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.FlatAppearance.BorderSize = 1;
-            btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            btnAdd.Location = new System.Drawing.Point(btnX, btnStartY);
-            btnAdd.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnAdd.Cursor = Cursors.Hand;
-            btnAdd.Click += new EventHandler(btnAdd_Click);
-            panelForm.Controls.Add(btnAdd);
-
-            btnSave = new Button();
-            btnSave.Text = "SAVE";
-            btnSave.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnSave.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnSave.BackColor = System.Drawing.Color.FromArgb(50, 150, 50);
-            btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.FlatAppearance.BorderSize = 0;
-            btnSave.Location = new System.Drawing.Point(btnX, btnStartY + 45);
-            btnSave.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnSave.Cursor = Cursors.Hand;
-            btnSave.Click += new EventHandler(btnSave_Click);
-            panelForm.Controls.Add(btnSave);
-
-            btnUpdate = new Button();
-            btnUpdate.Text = "UPDATE";
-            btnUpdate.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnUpdate.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnUpdate.BackColor = System.Drawing.Color.FromArgb(50, 50, 150);
-            btnUpdate.FlatStyle = FlatStyle.Flat;
-            btnUpdate.FlatAppearance.BorderSize = 0;
-            btnUpdate.Location = new System.Drawing.Point(btnX, btnStartY + 90);
-            btnUpdate.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnUpdate.Cursor = Cursors.Hand;
-            btnUpdate.Click += new EventHandler(btnUpdate_Click);
-            panelForm.Controls.Add(btnUpdate);
-
-            btnDelete = new Button();
-            btnDelete.Text = "DELETE";
-            btnDelete.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnDelete.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnDelete.BackColor = System.Drawing.Color.FromArgb(200, 50, 50);
-            btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.FlatAppearance.BorderSize = 0;
-            btnDelete.Location = new System.Drawing.Point(btnX, btnStartY + 135);
-            btnDelete.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnDelete.Cursor = Cursors.Hand;
-            btnDelete.Click += new EventHandler(btnDelete_Click);
-            panelForm.Controls.Add(btnDelete);
-
-            btnClear = new Button();
-            btnClear.Text = "CLEAR";
-            btnClear.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            btnClear.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            btnClear.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnClear.FlatStyle = FlatStyle.Flat;
-            btnClear.FlatAppearance.BorderSize = 1;
-            btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            btnClear.Location = new System.Drawing.Point(btnX, btnStartY + 180);
-            btnClear.Size = new System.Drawing.Size(btnWidth, btnHeight);
-            btnClear.Cursor = Cursors.Hand;
-            btnClear.Click += new EventHandler(btnClear_Click);
-            panelForm.Controls.Add(btnClear);
-
-            panelGrid = new Panel();
-            panelGrid.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            panelGrid.Location = new System.Drawing.Point(340, 120);
-            panelGrid.Size = new System.Drawing.Size(540, 510);
-            this.Controls.Add(panelGrid);
-
-            dgvGuests = new DataGridView();
-            dgvGuests.Dock = DockStyle.Fill;
-            dgvGuests.Location = new System.Drawing.Point(0, 0);
-            dgvGuests.Size = new System.Drawing.Size(540, 510);
-            dgvGuests.Name = "dgvGuests";
-            dgvGuests.BorderStyle = BorderStyle.None;
-            panelGrid.Controls.Add(dgvGuests);
+            this.BackColor = Color.FromArgb(240, 240, 240);
+            this.Name = "GuestForm";
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.panelForm);
+            this.Controls.Add(this.grpSearch);
+            this.Controls.Add(this.panelGrid);
 
             ((System.ComponentModel.ISupportInitialize)(this.dgvGuests)).EndInit();
+            this.panelForm.ResumeLayout(false);
+            this.panelGrid.ResumeLayout(false);
+            this.grpSearch.ResumeLayout(false);
             this.ResumeLayout(false);
         }
 
