@@ -1,14 +1,14 @@
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 using Hotel_management_system.Helpers;
+using Hotel_management_system.UI;
 
 namespace Hotel_management_system.Forms
 {
-    public partial class DashboardForm : Form
+    public partial class DashboardForm : GlassFormBase
     {
         private Form activeForm = null;
-        private Button activeMenuButton = null;
+        private GlassNavButton activeNavButton = null;
 
         public DashboardForm()
         {
@@ -20,11 +20,11 @@ namespace Hotel_management_system.Forms
         {
             lblWelcome.Text = "WELCOME, " + SessionManager.CurrentUserName.ToUpper();
             lblRole.Text = SessionManager.CurrentUserRole.ToUpper();
-            OpenChildForm(new GuestForm());
+            OpenChildForm(new GuestForm(), "Guests");
             SetActiveButton(btnGuests);
         }
 
-        private void OpenChildForm(Form childForm)
+        private void OpenChildForm(Form childForm, string pageTitle)
         {
             if (activeForm != null)
             {
@@ -38,20 +38,22 @@ namespace Hotel_management_system.Forms
             panelContent.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+
+            lblPageTitle.Text = pageTitle;
         }
 
-        private void SetActiveButton(Button button)
+        private void SetActiveButton(GlassNavButton button)
         {
-            if (activeMenuButton != null)
+            if (activeNavButton != null)
             {
-                activeMenuButton.BackColor = Color.FromArgb(255, 255, 255);
-                activeMenuButton.ForeColor = Color.FromArgb(0, 0, 0);
+                activeNavButton.IsActive = false;
+                activeNavButton.Invalidate();
             }
-            activeMenuButton = button;
+            activeNavButton = button;
             if (button != null)
             {
-                button.BackColor = Color.FromArgb(0, 0, 0);
-                button.ForeColor = Color.FromArgb(255, 255, 255);
+                button.IsActive = true;
+                button.Invalidate();
             }
         }
 
@@ -62,30 +64,31 @@ namespace Hotel_management_system.Forms
                 activeForm.Close();
                 activeForm = null;
             }
+            lblPageTitle.Text = "Dashboard";
             SetActiveButton(btnDashboard);
         }
 
         private void btnGuests_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new GuestForm());
+            OpenChildForm(new GuestForm(), "Guests");
             SetActiveButton(btnGuests);
         }
 
         private void btnRooms_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new RoomForm());
+            OpenChildForm(new RoomForm(), "Rooms");
             SetActiveButton(btnRooms);
         }
 
         private void btnBookings_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new BookingForm());
+            OpenChildForm(new BookingForm(), "Bookings");
             SetActiveButton(btnBookings);
         }
 
         private void btnBilling_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new BillingForm());
+            OpenChildForm(new BillingForm(), "Billing");
             SetActiveButton(btnBilling);
         }
 

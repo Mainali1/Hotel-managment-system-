@@ -1,9 +1,10 @@
 using System;
 using System.Windows.Forms;
+using Hotel_management_system.UI;
 
 namespace Hotel_management_system.Forms
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : GlassFormBase
     {
         public LoginForm()
         {
@@ -12,13 +13,12 @@ namespace Hotel_management_system.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text.Trim();
-            string password = txtPassword.Text;
+            string username = inputUsername.Text.Trim();
+            string password = inputPassword.Text;
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                lblError.Text = "Username and password are required.";
-                lblError.Visible = true;
+                ShowError("Username and password are required.");
                 return;
             }
 
@@ -35,17 +35,21 @@ namespace Hotel_management_system.Forms
                 }
                 else
                 {
-                    lblError.Text = "Invalid username or password.";
-                    lblError.Visible = true;
-                    txtPassword.Clear();
-                    txtUsername.Focus();
+                    ShowError("Invalid username or password.");
+                    inputPassword.Text = "";
+                    inputUsername.Input.Focus();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                lblError.Text = "Connection error. Please check your database.";
-                lblError.Visible = true;
+                ShowError("Connection error. Please check your database.");
             }
+        }
+
+        private void ShowError(string message)
+        {
+            lblError.Text = message;
+            lblError.Visible = true;
         }
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)

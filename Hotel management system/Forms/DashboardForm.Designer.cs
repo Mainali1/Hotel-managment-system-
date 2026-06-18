@@ -1,164 +1,171 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Hotel_management_system.UI;
 
 namespace Hotel_management_system.Forms
 {
     partial class DashboardForm
     {
         private System.ComponentModel.IContainer components = null;
+
         private Panel panelSideBar;
         private Panel panelTopBar;
         private Panel panelContent;
+
+        private Label lblLogoIcon;
         private Label lblTitle;
         private Label lblWelcome;
         private Label lblRole;
-        private Button btnDashboard;
-        private Button btnGuests;
-        private Button btnRooms;
-        private Button btnBookings;
-        private Button btnBilling;
-        private Button btnLogout;
-        private Label lblUserIcon;
+        private Label lblPageTitle;
         private Label lblVersion;
+
+        private GlassNavButton btnDashboard;
+        private GlassNavButton btnGuests;
+        private GlassNavButton btnRooms;
+        private GlassNavButton btnBookings;
+        private GlassNavButton btnBilling;
+        private GlassNavButton btnLogout;
 
         private void InitializeComponent()
         {
-            this.panelSideBar = new Panel();
-            this.panelTopBar = new Panel();
-            this.panelContent = new Panel();
-            this.lblTitle = new Label();
-            this.lblWelcome = new Label();
-            this.lblRole = new Label();
-            this.btnDashboard = new Button();
-            this.btnGuests = new Button();
-            this.btnRooms = new Button();
-            this.btnBookings = new Button();
-            this.btnBilling = new Button();
-            this.btnLogout = new Button();
-            this.lblUserIcon = new Label();
-            this.lblVersion = new Label();
-
             this.SuspendLayout();
 
-            this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.ClientSize = new Size(1240, 760);
             this.Text = "Hotel Management System";
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            this.BackColor = Theme.AppBackground;
+            this.MinimumSize = new Size(1100, 650);
 
-            panelSideBar = new Panel();
-            panelSideBar.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            panelSideBar.Dock = DockStyle.Left;
-            panelSideBar.Width = 220;
-            panelSideBar.Name = "panelSideBar";
+            // ---------------- Sidebar ----------------
+            panelSideBar = new Panel
+            {
+                BackColor = Theme.SidebarBackground,
+                Dock = DockStyle.Left,
+                Width = 232
+            };
             this.Controls.Add(panelSideBar);
 
-            lblTitle = new Label();
-            lblTitle.Text = "HOTEL";
-            lblTitle.Font = new System.Drawing.Font("Courier New", 18, System.Drawing.FontStyle.Bold);
-            lblTitle.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            lblTitle.Location = new System.Drawing.Point(20, 20);
-            lblTitle.Size = new System.Drawing.Size(180, 30);
+            lblLogoIcon = new Label
+            {
+                Text = AppIcons.Rooms,
+                Font = Theme.FontIcon(22F),
+                ForeColor = Theme.Accent,
+                Location = new Point(24, 26),
+                Size = new Size(40, 36)
+            };
+            panelSideBar.Controls.Add(lblLogoIcon);
+
+            lblTitle = new Label
+            {
+                Text = "HOTELOS",
+                Font = Theme.FontHeading(),
+                ForeColor = Theme.TextOnDark,
+                Location = new Point(66, 30),
+                Size = new Size(150, 30)
+            };
             panelSideBar.Controls.Add(lblTitle);
 
-            lblUserIcon = new Label();
-            lblUserIcon.Text = "[  ]";
-            lblUserIcon.Font = new System.Drawing.Font("Courier New", 40);
-            lblUserIcon.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            lblUserIcon.Location = new System.Drawing.Point(60, 60);
-            lblUserIcon.Size = new System.Drawing.Size(100, 50);
-            lblUserIcon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            panelSideBar.Controls.Add(lblUserIcon);
-
-            lblWelcome = new Label();
-            lblWelcome.Text = "WELCOME";
-            lblWelcome.Font = new System.Drawing.Font("Courier New", 10, System.Drawing.FontStyle.Bold);
-            lblWelcome.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            lblWelcome.Location = new System.Drawing.Point(20, 120);
-            lblWelcome.Size = new System.Drawing.Size(180, 20);
-            lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblWelcome = new Label
+            {
+                Text = "WELCOME",
+                Font = Theme.FontSubheading(),
+                ForeColor = Theme.TextOnDark,
+                Location = new Point(24, 90),
+                Size = new Size(184, 22)
+            };
             panelSideBar.Controls.Add(lblWelcome);
 
-            lblRole = new Label();
-            lblRole.Text = "STAFF";
-            lblRole.Font = new System.Drawing.Font("Courier New", 8);
-            lblRole.ForeColor = System.Drawing.Color.FromArgb(100, 100, 100);
-            lblRole.Location = new System.Drawing.Point(20, 140);
-            lblRole.Size = new System.Drawing.Size(180, 15);
-            lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblRole = new Label
+            {
+                Text = "STAFF",
+                Font = Theme.FontSmall(),
+                ForeColor = Theme.TextOnDarkMuted,
+                Location = new Point(24, 112),
+                Size = new Size(184, 16)
+            };
             panelSideBar.Controls.Add(lblRole);
 
-            int menuStartY = 180;
-            int menuGap = 5;
-            int menuHeight = 45;
+            int navStartY = 160;
+            int navGap = 8;
+            int navHeight = 44;
 
-            btnDashboard = CreateMenuButton("DASHBOARD", menuStartY);
+            btnDashboard = CreateNavButton(AppIcons.Dashboard, "DASHBOARD", navStartY);
             btnDashboard.Click += new EventHandler(btnDashboard_Click);
             panelSideBar.Controls.Add(btnDashboard);
 
-            btnGuests = CreateMenuButton("GUESTS", menuStartY + (menuHeight + menuGap) * 1);
+            btnGuests = CreateNavButton(AppIcons.Guests, "GUESTS", navStartY + (navHeight + navGap) * 1);
             btnGuests.Click += new EventHandler(btnGuests_Click);
             panelSideBar.Controls.Add(btnGuests);
 
-            btnRooms = CreateMenuButton("ROOMS", menuStartY + (menuHeight + menuGap) * 2);
+            btnRooms = CreateNavButton(AppIcons.Rooms, "ROOMS", navStartY + (navHeight + navGap) * 2);
             btnRooms.Click += new EventHandler(btnRooms_Click);
             panelSideBar.Controls.Add(btnRooms);
 
-            btnBookings = CreateMenuButton("BOOKINGS", menuStartY + (menuHeight + menuGap) * 3);
+            btnBookings = CreateNavButton(AppIcons.Bookings, "BOOKINGS", navStartY + (navHeight + navGap) * 3);
             btnBookings.Click += new EventHandler(btnBookings_Click);
             panelSideBar.Controls.Add(btnBookings);
 
-            btnBilling = CreateMenuButton("BILLING", menuStartY + (menuHeight + menuGap) * 4);
+            btnBilling = CreateNavButton(AppIcons.Billing, "BILLING", navStartY + (navHeight + navGap) * 4);
             btnBilling.Click += new EventHandler(btnBilling_Click);
             panelSideBar.Controls.Add(btnBilling);
 
-            btnLogout = CreateMenuButton("LOGOUT", 580);
-            btnLogout.BackColor = System.Drawing.Color.FromArgb(200, 50, 50);
-            btnLogout.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
+            btnLogout = CreateNavButton(AppIcons.Logout, "LOGOUT", 660);
             btnLogout.Click += new EventHandler(btnLogout_Click);
             panelSideBar.Controls.Add(btnLogout);
 
-            lblVersion = new Label();
-            lblVersion.Text = "v1.0.0";
-            lblVersion.Font = new System.Drawing.Font("Courier New", 7);
-            lblVersion.ForeColor = System.Drawing.Color.FromArgb(150, 150, 150);
-            lblVersion.Location = new System.Drawing.Point(20, 630);
-            lblVersion.Size = new System.Drawing.Size(180, 15);
-            lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblVersion = new Label
+            {
+                Text = "v2.0.0",
+                Font = Theme.FontSmall(),
+                ForeColor = Theme.TextOnDarkMuted,
+                Location = new Point(24, 728),
+                Size = new Size(184, 16),
+                TextAlign = ContentAlignment.MiddleLeft
+            };
             panelSideBar.Controls.Add(lblVersion);
 
-            panelTopBar = new Panel();
-            panelTopBar.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            panelTopBar.Dock = DockStyle.Top;
-            panelTopBar.Height = 50;
-            panelTopBar.Name = "panelTopBar";
+            // ---------------- Top bar ----------------
+            panelTopBar = new Panel
+            {
+                BackColor = Theme.AppBackground,
+                Dock = DockStyle.Top,
+                Height = 64
+            };
             this.Controls.Add(panelTopBar);
             this.Controls.SetChildIndex(panelTopBar, 0);
 
-            panelContent = new Panel();
-            panelContent.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
-            panelContent.Dock = DockStyle.Fill;
-            panelContent.Name = "panelContent";
+            lblPageTitle = new Label
+            {
+                Text = "Guests",
+                Font = Theme.FontHeading(),
+                ForeColor = Theme.TextPrimary,
+                Location = new Point(28, 18),
+                Size = new Size(300, 30)
+            };
+            panelTopBar.Controls.Add(lblPageTitle);
+
+            // ---------------- Content ----------------
+            panelContent = new Panel
+            {
+                BackColor = Theme.AppBackground,
+                Dock = DockStyle.Fill,
+                Padding = new Padding(24, 0, 24, 24)
+            };
             this.Controls.Add(panelContent);
 
             this.ResumeLayout(false);
         }
 
-        private Button CreateMenuButton(string text, int top)
+        private GlassNavButton CreateNavButton(string icon, string text, int top)
         {
-            Button btn = new Button();
-            btn.Text = text;
-            btn.Font = new System.Drawing.Font("Courier New", 10, System.Drawing.FontStyle.Bold);
-            btn.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            btn.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btn.FlatStyle = FlatStyle.Flat;
-            btn.FlatAppearance.BorderSize = 0;
-            btn.Location = new System.Drawing.Point(20, top);
-            btn.Size = new System.Drawing.Size(180, 45);
-            btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btn.Padding = new Padding(15, 0, 0, 0);
-            btn.Cursor = Cursors.Hand;
-            return btn;
+            return new GlassNavButton
+            {
+                IconGlyph = icon,
+                Text = text,
+                Location = new Point(18, top),
+                Size = new Size(196, 44)
+            };
         }
 
         protected override void Dispose(bool disposing)

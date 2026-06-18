@@ -1,117 +1,135 @@
-using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Hotel_management_system.UI;
 
 namespace Hotel_management_system.Forms
 {
     partial class LoginForm
     {
         private System.ComponentModel.IContainer components = null;
-        private TextBox txtUsername;
-        private TextBox txtPassword;
-        private Button btnLogin;
-        private Label lblError;
+
+        private GlassCard cardLogin;
+        private Label lblIcon;
         private Label lblTitle;
         private Label lblSubtitle;
-        private Panel mainPanel;
-        private Label lblUsername;
-        private Label lblPassword;
+        private Label lblUsernameCaption;
+        private Label lblPasswordCaption;
+        private GlassInput inputUsername;
+        private GlassInput inputPassword;
+        private GlassButton btnLogin;
+        private Label lblError;
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 480);
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.ClientSize = new Size(460, 620);
             this.Text = "Hotel Management System - Login";
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
+            this.BackColor = Theme.AppBackground;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
 
-            mainPanel = new Panel();
-            mainPanel.Dock = DockStyle.Fill;
-            mainPanel.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            this.Controls.Add(mainPanel);
+            cardLogin = new GlassCard
+            {
+                Size = new Size(380, 520),
+                Location = new Point((this.ClientSize.Width - 380) / 2, 50),
+                BackColor = Theme.CardBackground
+            };
+            this.Controls.Add(cardLogin);
 
-            lblTitle = new Label();
-            lblTitle.Text = "HOTEL";
-            lblTitle.Font = new System.Drawing.Font("Courier New", 28, System.Drawing.FontStyle.Bold);
-            lblTitle.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            lblTitle.Location = new System.Drawing.Point(50, 60);
-            lblTitle.Size = new System.Drawing.Size(300, 40);
-            lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            mainPanel.Controls.Add(lblTitle);
+            lblIcon = new Label
+            {
+                Text = AppIcons.Rooms,
+                Font = Theme.FontIcon(34F),
+                ForeColor = Theme.Accent,
+                Location = new Point(0, 36),
+                Size = new Size(380, 50),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            cardLogin.Controls.Add(lblIcon);
 
-            lblSubtitle = new Label();
-            lblSubtitle.Text = "MANAGEMENT SYSTEM";
-            lblSubtitle.Font = new System.Drawing.Font("Courier New", 10, System.Drawing.FontStyle.Regular);
-            lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(100, 100, 100);
-            lblSubtitle.Location = new System.Drawing.Point(50, 100);
-            lblSubtitle.Size = new System.Drawing.Size(300, 20);
-            lblSubtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            mainPanel.Controls.Add(lblSubtitle);
+            lblTitle = new Label
+            {
+                Text = "Welcome Back",
+                Font = Theme.FontHeading(),
+                ForeColor = Theme.TextPrimary,
+                Location = new Point(0, 96),
+                Size = new Size(380, 28),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            cardLogin.Controls.Add(lblTitle);
 
-            lblUsername = new Label();
-            lblUsername.Text = "USERNAME";
-            lblUsername.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            lblUsername.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            lblUsername.Location = new System.Drawing.Point(50, 160);
-            lblUsername.Size = new System.Drawing.Size(300, 15);
-            mainPanel.Controls.Add(lblUsername);
+            lblSubtitle = new Label
+            {
+                Text = "Sign in to manage the hotel",
+                Font = Theme.FontBody(),
+                ForeColor = Theme.TextSecondary,
+                Location = new Point(0, 126),
+                Size = new Size(380, 20),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            cardLogin.Controls.Add(lblSubtitle);
 
-            txtUsername = new TextBox();
-            txtUsername.Location = new System.Drawing.Point(50, 180);
-            txtUsername.Size = new System.Drawing.Size(300, 30);
-            txtUsername.Font = new System.Drawing.Font("Courier New", 11);
-            txtUsername.BorderStyle = BorderStyle.FixedSingle;
-            txtUsername.BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
-            txtUsername.Name = "txtUsername";
-            mainPanel.Controls.Add(txtUsername);
+            lblUsernameCaption = new Label
+            {
+                Text = "USERNAME",
+                Font = Theme.FontSmall(),
+                ForeColor = Theme.TextSecondary,
+                Location = new Point(40, 180),
+                Size = new Size(300, 16)
+            };
+            cardLogin.Controls.Add(lblUsernameCaption);
 
-            lblPassword = new Label();
-            lblPassword.Text = "PASSWORD";
-            lblPassword.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-            lblPassword.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            lblPassword.Location = new System.Drawing.Point(50, 220);
-            lblPassword.Size = new System.Drawing.Size(300, 15);
-            mainPanel.Controls.Add(lblPassword);
+            inputUsername = new GlassInput
+            {
+                Location = new Point(40, 200),
+                Size = new Size(300, 44)
+            };
+            cardLogin.Controls.Add(inputUsername);
 
-            txtPassword = new TextBox();
-            txtPassword.Location = new System.Drawing.Point(50, 240);
-            txtPassword.Size = new System.Drawing.Size(300, 30);
-            txtPassword.Font = new System.Drawing.Font("Courier New", 11);
-            txtPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtPassword.BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
-            txtPassword.PasswordChar = '*';
-            txtPassword.Name = "txtPassword";
-            txtPassword.KeyDown += new KeyEventHandler(txtPassword_KeyDown);
-            mainPanel.Controls.Add(txtPassword);
+            lblPasswordCaption = new Label
+            {
+                Text = "PASSWORD",
+                Font = Theme.FontSmall(),
+                ForeColor = Theme.TextSecondary,
+                Location = new Point(40, 260),
+                Size = new Size(300, 16)
+            };
+            cardLogin.Controls.Add(lblPasswordCaption);
 
-            btnLogin = new Button();
-            btnLogin.Text = "LOGIN";
-            btnLogin.Location = new System.Drawing.Point(50, 300);
-            btnLogin.Size = new System.Drawing.Size(300, 45);
-            btnLogin.Font = new System.Drawing.Font("Courier New", 11, System.Drawing.FontStyle.Bold);
-            btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.BackColor = System.Drawing.Color.FromArgb(0, 0, 0);
-            btnLogin.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            btnLogin.FlatAppearance.BorderSize = 0;
-            btnLogin.Name = "btnLogin";
-            btnLogin.Cursor = Cursors.Hand;
-            btnLogin.Click += new EventHandler(btnLogin_Click);
-            mainPanel.Controls.Add(btnLogin);
+            inputPassword = new GlassInput
+            {
+                Location = new Point(40, 280),
+                Size = new Size(300, 44),
+                UseSystemPasswordChar = true
+            };
+            inputPassword.Input.KeyDown += new KeyEventHandler(txtPassword_KeyDown);
+            cardLogin.Controls.Add(inputPassword);
 
-            lblError = new Label();
-            lblError.Text = "";
-            lblError.Font = new System.Drawing.Font("Courier New", 9);
-            lblError.ForeColor = System.Drawing.Color.FromArgb(200, 0, 0);
-            lblError.Location = new System.Drawing.Point(50, 360);
-            lblError.Size = new System.Drawing.Size(300, 20);
-            lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            lblError.Visible = false;
-            lblError.Name = "lblError";
-            mainPanel.Controls.Add(lblError);
+            btnLogin = new GlassButton
+            {
+                Text = "LOG IN",
+                IconGlyph = AppIcons.Lock,
+                Location = new Point(40, 350),
+                Size = new Size(300, 46),
+                BaseColor = Theme.Accent,
+                HoverColor = Theme.AccentHover
+            };
+            btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            cardLogin.Controls.Add(btnLogin);
+
+            lblError = new Label
+            {
+                Text = "",
+                Font = Theme.FontSmall(),
+                ForeColor = Theme.Danger,
+                Location = new Point(40, 410),
+                Size = new Size(300, 36),
+                TextAlign = ContentAlignment.MiddleCenter,
+                Visible = false
+            };
+            cardLogin.Controls.Add(lblError);
         }
 
         protected override void Dispose(bool disposing)
