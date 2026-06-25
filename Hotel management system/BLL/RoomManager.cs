@@ -75,6 +75,10 @@ namespace Hotel_management_system.BLL
             {
                 return (false, "Cannot delete a room that is currently occupied.");
             }
+            if (roomDAL.HasActiveBookings(roomId))
+            {
+                return (false, "Cannot delete a room with active bookings.");
+            }
             if (roomDAL.DeleteRoom(roomId))
             {
                 return (true, "Room deleted successfully.");

@@ -37,7 +37,7 @@ namespace Hotel_management_system.UI
             Input.LostFocus += (s, e) => { BorderColor = Theme.InputBorder; Invalidate(); };
         }
 
-        public string Text { get => Input.Text; set => Input.Text = value; }
+        public new string Text { get => Input.Text; set => Input.Text = value; }
         public bool UseSystemPasswordChar { get => Input.UseSystemPasswordChar; set => Input.UseSystemPasswordChar = value; }
     }
 }

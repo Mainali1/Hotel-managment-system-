@@ -3,10 +3,13 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using Hotel_management_system.BLL;
 using Hotel_management_system.Models;
+using Guna.UI2.WinForms;
+using Hotel_management_system.UI;
+using System.Drawing;
 
 namespace Hotel_management_system.Forms
 {
-    public partial class GuestForm : Form
+    public partial class GuestForm : GlassFormBase
     {
         private GuestManager guestManager = new GuestManager();
         private List<Guest> guestList = new List<Guest>();
@@ -56,19 +59,25 @@ namespace Hotel_management_system.Forms
                 dgvGuests.Columns["NationalID"].HeaderText = "NATIONAL ID";
                 dgvGuests.Columns["CreatedAt"].HeaderText = "CREATED";
 
-                foreach (DataGridViewColumn col in dgvGuests.Columns)
-                {
-                    col.HeaderCell.Style.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-                    col.HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                    col.HeaderCell.Style.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                }
-
-                dgvGuests.DefaultCellStyle.Font = new System.Drawing.Font("Courier New", 9);
-                dgvGuests.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                dgvGuests.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(245, 245, 245);
-                dgvGuests.RowHeadersVisible = false;
                 dgvGuests.ColumnHeadersHeight = 35;
                 dgvGuests.RowTemplate.Height = 30;
+                dgvGuests.RowHeadersVisible = false;
+                dgvGuests.BackgroundColor = Color.White;
+                dgvGuests.GridColor = Color.FromArgb(230, 230, 230);
+                dgvGuests.BorderStyle = BorderStyle.None;
+                dgvGuests.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+
+                dgvGuests.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(24, 26, 34);
+                dgvGuests.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgvGuests.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(24, 26, 34);
+                dgvGuests.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+                dgvGuests.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+                dgvGuests.DefaultCellStyle.BackColor = Color.White;
+                dgvGuests.DefaultCellStyle.SelectionBackColor = Color.FromArgb(77, 124, 254);
+                dgvGuests.DefaultCellStyle.SelectionForeColor = Color.White;
+                dgvGuests.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+                dgvGuests.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
             }
         }
 
@@ -227,13 +236,13 @@ namespace Hotel_management_system.Forms
 
         private void ClearFields()
         {
-            txtGuestID.Clear();
-            txtFullName.Clear();
-            txtPhone.Clear();
-            txtEmail.Clear();
-            txtAddress.Clear();
-            txtNationalID.Clear();
-            txtSearch.Clear();
+            txtGuestID.Text = "";
+            txtFullName.Text = "";
+            txtPhone.Text = "";
+            txtEmail.Text = "";
+            txtAddress.Text = "";
+            txtNationalID.Text = "";
+            txtSearch.Text = "";
         }
     }
 }

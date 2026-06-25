@@ -73,6 +73,35 @@ namespace Hotel_management_system.DAL
             return guests;
         }
 
+        public int GetTotalGuests()
+        {
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM tbl_Guests";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    return (int)cmd.ExecuteScalar();
+                }
+            }
+        }
+
+        public bool HasActiveBookings(int guestId)
+        {
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"SELECT COUNT(*) FROM tbl_Bookings 
+                                 WHERE GuestID = @GuestID AND Status IN ('Confirmed', 'CheckedIn')";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@GuestID", guestId);
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
+
         public bool AddGuest(Guest guest)
         {
             using (SqlConnection conn = DatabaseHelper.GetConnection())

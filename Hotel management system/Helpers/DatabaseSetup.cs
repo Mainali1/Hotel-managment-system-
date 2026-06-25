@@ -1,4 +1,5 @@
 using System;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.IO;
 
@@ -6,11 +7,21 @@ namespace Hotel_management_system.Helpers
 {
     public static class DatabaseSetup
     {
-        private static string masterConnectionString = "Server=localhost;Database=master;User Id=sa;Password=root123;";
+        private static string GetMasterConnectionString()
+        {
+            return ConfigurationManager.ConnectionStrings["MasterDB"]?.ConnectionString
+                ?? "Server=localhost;Database=master;User Id=sa;Password=root123;";
+        }
+
+        private static string GetHotelConnectionString()
+        {
+            return ConfigurationManager.ConnectionStrings["HotelDB"]?.ConnectionString
+                ?? "Server=localhost;Database=HotelManagementDB;User Id=sa;Password=root123;";
+        }
 
         public static void InitializeDatabase()
         {
-            using (SqlConnection conn = new SqlConnection(masterConnectionString))
+            using (SqlConnection conn = new SqlConnection(GetMasterConnectionString()))
             {
                 conn.Open();
 
@@ -37,9 +48,7 @@ namespace Hotel_management_system.Helpers
 
         private static void CreateTables()
         {
-            string connectionString = "Server=localhost;Database=HotelManagementDB;User Id=sa;Password=root123;";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(GetHotelConnectionString()))
             {
                 conn.Open();
 
@@ -110,15 +119,15 @@ namespace Hotel_management_system.Helpers
 
         private static void SeedData()
         {
-            string connectionString = "Server=localhost;Database=HotelManagementDB;User Id=sa;Password=root123;";
+            string hashedPassword = PasswordHelper.HashPassword("admin123");
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(GetHotelConnectionString()))
             {
                 conn.Open();
 
-                string seedQuery = @"
+                string seedQuery = $@"
                     INSERT INTO tbl_Staff (Username, Password, FullName, Role)
-                    VALUES ('admin', 'admin123', 'Administrator', 'Admin');
+                    VALUES ('admin', '{hashedPassword}', 'Administrator', 'Admin');
 
                     INSERT INTO tbl_Rooms (RoomNumber, RoomType, RatePerNight, Status)
                     VALUES 

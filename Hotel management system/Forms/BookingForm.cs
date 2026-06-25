@@ -3,10 +3,13 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using Hotel_management_system.BLL;
 using Hotel_management_system.Models;
+using Guna.UI2.WinForms;
+using Hotel_management_system.UI;
+using System.Drawing;
 
 namespace Hotel_management_system.Forms
 {
-    public partial class BookingForm : Form
+    public partial class BookingForm : GlassFormBase
     {
         private BookingManager bookingManager = new BookingManager();
         private GuestManager guestManager = new GuestManager();
@@ -96,19 +99,25 @@ namespace Hotel_management_system.Forms
                 dgvBookings.Columns["Status"].HeaderText = "STATUS";
                 dgvBookings.Columns["Notes"].HeaderText = "NOTES";
 
-                foreach (DataGridViewColumn col in dgvBookings.Columns)
-                {
-                    col.HeaderCell.Style.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-                    col.HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                    col.HeaderCell.Style.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                }
-
-                dgvBookings.DefaultCellStyle.Font = new System.Drawing.Font("Courier New", 9);
-                dgvBookings.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                dgvBookings.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(245, 245, 245);
-                dgvBookings.RowHeadersVisible = false;
                 dgvBookings.ColumnHeadersHeight = 35;
                 dgvBookings.RowTemplate.Height = 30;
+                dgvBookings.RowHeadersVisible = false;
+                dgvBookings.BackgroundColor = Color.White;
+                dgvBookings.GridColor = Color.FromArgb(230, 230, 230);
+                dgvBookings.BorderStyle = BorderStyle.None;
+                dgvBookings.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+
+                dgvBookings.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(24, 26, 34);
+                dgvBookings.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgvBookings.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(24, 26, 34);
+                dgvBookings.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+                dgvBookings.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+                dgvBookings.DefaultCellStyle.BackColor = Color.White;
+                dgvBookings.DefaultCellStyle.SelectionBackColor = Color.FromArgb(77, 124, 254);
+                dgvBookings.DefaultCellStyle.SelectionForeColor = Color.White;
+                dgvBookings.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+                dgvBookings.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
 
                 foreach (DataGridViewRow row in dgvBookings.Rows)
                 {
@@ -116,16 +125,16 @@ namespace Hotel_management_system.Forms
                     switch (status)
                     {
                         case "Confirmed":
-                            row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(200, 255, 200);
+                            row.DefaultCellStyle.BackColor = Color.FromArgb(200, 255, 200);
                             break;
                         case "CheckedIn":
-                            row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(200, 200, 255);
+                            row.DefaultCellStyle.BackColor = Color.FromArgb(200, 200, 255);
                             break;
                         case "CheckedOut":
-                            row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(220, 220, 220);
+                            row.DefaultCellStyle.BackColor = Color.FromArgb(220, 220, 220);
                             break;
                         case "Cancelled":
-                            row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 200, 200);
+                            row.DefaultCellStyle.BackColor = Color.FromArgb(255, 200, 200);
                             break;
                     }
                 }
@@ -346,13 +355,18 @@ namespace Hotel_management_system.Forms
 
         private void ClearFields()
         {
-            txtBookingID.Clear();
+            txtBookingID.Text = "";
             cmbGuest.SelectedIndex = 0;
             cmbRoom.SelectedIndex = 0;
             dtpCheckInDate.Value = DateTime.Now;
             dtpCheckOutDate.Value = DateTime.Now.AddDays(1);
-            txtNotes.Clear();
-            txtSearch.Clear();
+            txtNotes.Text = "";
+            txtSearch.Text = "";
+        }
+
+        private void lblSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

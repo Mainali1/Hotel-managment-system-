@@ -79,6 +79,77 @@ namespace Hotel_management_system.DAL
             return bookings;
         }
 
+        public List<Booking> GetTodayCheckIns()
+        {
+            List<Booking> bookings = new List<Booking>();
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"SELECT b.*, g.FullName AS GuestName, r.RoomNumber 
+                                FROM tbl_Bookings b
+                                INNER JOIN tbl_Guests g ON b.GuestID = g.GuestID
+                                INNER JOIN tbl_Rooms r ON b.RoomID = r.RoomID
+                                WHERE CAST(b.CheckInDate AS DATE) = CAST(GETDATE() AS DATE)
+                                ORDER BY b.CheckInDate DESC";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        bookings.Add(MapBooking(reader));
+                    }
+                }
+            }
+            return bookings;
+        }
+
+        public List<Booking> GetTodayCheckOuts()
+        {
+            List<Booking> bookings = new List<Booking>();
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"SELECT b.*, g.FullName AS GuestName, r.RoomNumber 
+                                FROM tbl_Bookings b
+                                INNER JOIN tbl_Guests g ON b.GuestID = g.GuestID
+                                INNER JOIN tbl_Rooms r ON b.RoomID = r.RoomID
+                                WHERE CAST(b.CheckOutDate AS DATE) = CAST(GETDATE() AS DATE)
+                                ORDER BY b.CheckOutDate DESC";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        bookings.Add(MapBooking(reader));
+                    }
+                }
+            }
+            return bookings;
+        }
+
+        public List<Booking> GetRecentBookings(int limit)
+        {
+            List<Booking> bookings = new List<Booking>();
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = $@"SELECT TOP {limit} b.*, g.FullName AS GuestName, r.RoomNumber 
+                                FROM tbl_Bookings b
+                                INNER JOIN tbl_Guests g ON b.GuestID = g.GuestID
+                                INNER JOIN tbl_Rooms r ON b.RoomID = r.RoomID
+                                ORDER BY b.CreatedAt DESC";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        bookings.Add(MapBooking(reader));
+                    }
+                }
+            }
+            return bookings;
+        }
+
         public List<Booking> SearchBookings(string searchTerm)
         {
             List<Booking> bookings = new List<Booking>();

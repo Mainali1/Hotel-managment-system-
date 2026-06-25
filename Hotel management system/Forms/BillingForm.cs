@@ -7,10 +7,12 @@ using Hotel_management_system.BLL;
 using Hotel_management_system.Models;
 using Hotel_management_system.Helpers;
 using Hotel_management_system.DAL;
+using Guna.UI2.WinForms;
+using Hotel_management_system.UI;
 
 namespace Hotel_management_system.Forms
 {
-    public partial class BillingForm : Form
+    public partial class BillingForm : GlassFormBase
     {
         private BillingManager billingManager = new BillingManager();
         private BookingDAL bookingDAL = new BookingDAL();
@@ -23,7 +25,6 @@ namespace Hotel_management_system.Forms
         public BillingForm()
         {
             InitializeComponent();
-            this.BackColor = Color.Black;
             LoadBills();
             SetupDataGridView();
             SetupPrintDocument();
@@ -42,19 +43,6 @@ namespace Hotel_management_system.Forms
         private void SetupPrintDocument()
         {
             printDocument.PrintPage += PrintDocument_PrintPage;
-        }
-
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-
-            // Enable Liquid Glass Effect
-            int backdropType = (int)DwmApi.DWM_SYSTEMBACKDROP_TYPE.DWMSBT_TRANSIENTWINDOW;
-            DwmApi.DwmSetWindowAttribute(this.Handle, (int)DwmApi.DWMWINDOWATTRIBUTE.DWMWA_SYSTEMBACKDROP_TYPE, ref backdropType, sizeof(int));
-
-            // Enable Dark Mode Frame
-            int darkMode = 1;
-            DwmApi.DwmSetWindowAttribute(this.Handle, (int)DwmApi.DWMWINDOWATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE, ref darkMode, sizeof(int));
         }
 
         private void LoadBills()
@@ -85,34 +73,40 @@ namespace Hotel_management_system.Forms
                 dgvBills.Columns["PaymentStatus"].HeaderText = "STATUS";
                 dgvBills.Columns["GeneratedAt"].HeaderText = "GENERATED";
 
-                foreach (DataGridViewColumn col in dgvBills.Columns)
-                {
-                    col.HeaderCell.Style.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-                    col.HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                    col.HeaderCell.Style.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                }
-
-                dgvBills.DefaultCellStyle.Font = new System.Drawing.Font("Courier New", 9);
-                dgvBills.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                dgvBills.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(245, 245, 245);
-                dgvBills.RowHeadersVisible = false;
                 dgvBills.ColumnHeadersHeight = 35;
                 dgvBills.RowTemplate.Height = 30;
+                dgvBills.RowHeadersVisible = false;
+                dgvBills.BackgroundColor = Color.White;
+                dgvBills.GridColor = Color.FromArgb(230, 230, 230);
+                dgvBills.BorderStyle = BorderStyle.None;
+                dgvBills.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
                 dgvBills.Columns["RatePerNight"].DefaultCellStyle.Format = "N2";
                 dgvBills.Columns["SubTotal"].DefaultCellStyle.Format = "N2";
                 dgvBills.Columns["AdditionalCharges"].DefaultCellStyle.Format = "N2";
                 dgvBills.Columns["TotalAmount"].DefaultCellStyle.Format = "N2";
+
+                dgvBills.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(24, 26, 34);
+                dgvBills.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgvBills.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(24, 26, 34);
+                dgvBills.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+                dgvBills.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+                dgvBills.DefaultCellStyle.BackColor = Color.White;
+                dgvBills.DefaultCellStyle.SelectionBackColor = Color.FromArgb(77, 124, 254);
+                dgvBills.DefaultCellStyle.SelectionForeColor = Color.White;
+                dgvBills.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+                dgvBills.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
 
                 foreach (DataGridViewRow row in dgvBills.Rows)
                 {
                     string status = row.Cells["PaymentStatus"].Value?.ToString() ?? "";
                     if (status == "Paid")
                     {
-                        row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(200, 255, 200);
+                        row.DefaultCellStyle.BackColor = Color.FromArgb(200, 255, 200);
                     }
                     else
                     {
-                        row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 255, 200);
+                        row.DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 200);
                     }
                 }
             }
@@ -244,17 +238,17 @@ namespace Hotel_management_system.Forms
 
         private void ClearFields()
         {
-            txtBillID.Clear();
-            txtInvoiceNumber.Clear();
-            txtNumberOfNights.Clear();
-            txtRatePerNight.Clear();
-            txtSubTotal.Clear();
-            txtAdditionalCharges.Clear();
-            txtTotalAmount.Clear();
-            txtPaymentStatus.Clear();
-            txtGeneratedAt.Clear();
-            txtPaidAt.Clear();
-            txtInvoicePreview.Clear();
+            txtBillID.Text = "";
+            txtInvoiceNumber.Text = "";
+            txtNumberOfNights.Text = "";
+            txtRatePerNight.Text = "";
+            txtSubTotal.Text = "";
+            txtAdditionalCharges.Text = "";
+            txtTotalAmount.Text = "";
+            txtPaymentStatus.Text = "";
+            txtGeneratedAt.Text = "";
+            txtPaidAt.Text = "";
+            txtInvoicePreview.Text = "";
             invoiceText = "";
         }
     }

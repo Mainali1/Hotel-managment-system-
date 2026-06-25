@@ -36,9 +36,9 @@ namespace Hotel_management_system.BLL
             }
             if (!ValidationHelper.IsValidPhone(guest.Phone))
             {
-                return (false, "Invalid phone number. Phone must be at least 7 digits.");
+                return (false, "Invalid phone number. Phone must be 7-15 digits.");
             }
-            if (!ValidationHelper.IsValidEmail(guest.Email))
+            if (!string.IsNullOrWhiteSpace(guest.Email) && !ValidationHelper.IsValidEmail(guest.Email))
             {
                 return (false, "Invalid email format.");
             }
@@ -57,9 +57,9 @@ namespace Hotel_management_system.BLL
             }
             if (!ValidationHelper.IsValidPhone(guest.Phone))
             {
-                return (false, "Invalid phone number. Phone must be at least 7 digits.");
+                return (false, "Invalid phone number. Phone must be 7-15 digits.");
             }
-            if (!ValidationHelper.IsValidEmail(guest.Email))
+            if (!string.IsNullOrWhiteSpace(guest.Email) && !ValidationHelper.IsValidEmail(guest.Email))
             {
                 return (false, "Invalid email format.");
             }
@@ -72,6 +72,10 @@ namespace Hotel_management_system.BLL
 
         public (bool success, string message) DeleteGuest(int guestId)
         {
+            if (guestDAL.HasActiveBookings(guestId))
+            {
+                return (false, "Cannot delete guest with active bookings. Cancel or complete all bookings first.");
+            }
             if (guestDAL.DeleteGuest(guestId))
             {
                 return (true, "Guest deleted successfully.");

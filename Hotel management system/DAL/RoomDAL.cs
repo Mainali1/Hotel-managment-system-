@@ -74,6 +74,35 @@ namespace Hotel_management_system.DAL
             return GetRoomsByStatus("Available");
         }
 
+        public int GetTotalRooms()
+        {
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM tbl_Rooms";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    return (int)cmd.ExecuteScalar();
+                }
+            }
+        }
+
+        public bool HasActiveBookings(int roomId)
+        {
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"SELECT COUNT(*) FROM tbl_Bookings 
+                                 WHERE RoomID = @RoomID AND Status IN ('Confirmed', 'CheckedIn')";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@RoomID", roomId);
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
+
         public bool AddRoom(Room room)
         {
             using (SqlConnection conn = DatabaseHelper.GetConnection())

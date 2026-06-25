@@ -68,6 +68,39 @@ namespace Hotel_management_system.DAL
             return null;
         }
 
+        public decimal GetTodayRevenue()
+        {
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"SELECT ISNULL(SUM(TotalAmount), 0) FROM tbl_Billing 
+                                 WHERE CAST(GeneratedAt AS DATE) = CAST(GETDATE() AS DATE) 
+                                 AND PaymentStatus = 'Paid'";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    var result = cmd.ExecuteScalar();
+                    return result == DBNull.Value ? 0 : Convert.ToDecimal(result);
+                }
+            }
+        }
+
+        public decimal GetMonthlyRevenue()
+        {
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"SELECT ISNULL(SUM(TotalAmount), 0) FROM tbl_Billing 
+                                 WHERE MONTH(GeneratedAt) = MONTH(GETDATE()) 
+                                 AND YEAR(GeneratedAt) = YEAR(GETDATE())
+                                 AND PaymentStatus = 'Paid'";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    var result = cmd.ExecuteScalar();
+                    return result == DBNull.Value ? 0 : Convert.ToDecimal(result);
+                }
+            }
+        }
+
         public int AddBill(Bill bill)
         {
             using (SqlConnection conn = DatabaseHelper.GetConnection())
@@ -114,29 +147,6 @@ namespace Hotel_management_system.DAL
                         cmd.Parameters.AddWithValue("@PaidAt", DateTime.Now);
                     }
                     return cmd.ExecuteNonQuery() > 0;
-                }
-            }
-        }
-
-        public string GetNextInvoiceNumber()
-        {
-            using (SqlConnection conn = DatabaseHelper.GetConnection())
-            {
-                conn.Open();
-                string query = "SELECT TOP 1 InvoiceNumber FROM tbl_Billing ORDER BY BillID DESC";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    var result = cmd.ExecuteScalar();
-                    if (result != null && result != DBNull.Value)
-                    {
-                        string lastInvoice = result.ToString();
-                        if (lastInvoice.StartsWith("INV-"))
-                        {
-                            int num = int.Parse(lastInvoice.Substring(4));
-                            return "INV-" + (num + 1).ToString("D4");
-                        }
-                    }
-                    return "INV-0001";
                 }
             }
         }

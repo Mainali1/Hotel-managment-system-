@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Hotel_management_system.Helpers
 {
@@ -11,7 +13,7 @@ namespace Hotel_management_system.Helpers
                 return false;
             }
             string digitsOnly = new string(phone.Where(char.IsDigit).ToArray());
-            return digitsOnly.Length >= 7;
+            return digitsOnly.Length >= 7 && digitsOnly.Length <= 15;
         }
 
         public static bool IsValidDateRange(DateTime checkIn, DateTime checkOut)
@@ -23,9 +25,17 @@ namespace Hotel_management_system.Helpers
         {
             if (string.IsNullOrWhiteSpace(email))
             {
-                return true;
+                return false;
             }
-            return email.Contains("@") && email.Contains(".");
+            try
+            {
+                var regex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+                return regex.IsMatch(email);
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public static bool IsPositiveDecimal(decimal value)

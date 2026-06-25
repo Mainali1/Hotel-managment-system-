@@ -3,10 +3,13 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using Hotel_management_system.BLL;
 using Hotel_management_system.Models;
+using Guna.UI2.WinForms;
+using Hotel_management_system.UI;
+using System.Drawing;
 
 namespace Hotel_management_system.Forms
 {
-    public partial class RoomForm : Form
+    public partial class RoomForm : GlassFormBase
     {
         private RoomManager roomManager = new RoomManager();
         private List<Room> roomList = new List<Room>();
@@ -82,20 +85,26 @@ namespace Hotel_management_system.Forms
                 dgvRooms.Columns["Status"].HeaderText = "STATUS";
                 dgvRooms.Columns["Description"].HeaderText = "DESCRIPTION";
 
-                foreach (DataGridViewColumn col in dgvRooms.Columns)
-                {
-                    col.HeaderCell.Style.Font = new System.Drawing.Font("Courier New", 9, System.Drawing.FontStyle.Bold);
-                    col.HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                    col.HeaderCell.Style.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                }
-
-                dgvRooms.DefaultCellStyle.Font = new System.Drawing.Font("Courier New", 9);
-                dgvRooms.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                dgvRooms.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(245, 245, 245);
-                dgvRooms.RowHeadersVisible = false;
                 dgvRooms.ColumnHeadersHeight = 35;
                 dgvRooms.RowTemplate.Height = 30;
+                dgvRooms.RowHeadersVisible = false;
+                dgvRooms.BackgroundColor = Color.White;
+                dgvRooms.GridColor = Color.FromArgb(230, 230, 230);
+                dgvRooms.BorderStyle = BorderStyle.None;
+                dgvRooms.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
                 dgvRooms.Columns["RatePerNight"].DefaultCellStyle.Format = "N2";
+
+                dgvRooms.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(24, 26, 34);
+                dgvRooms.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgvRooms.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(24, 26, 34);
+                dgvRooms.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+                dgvRooms.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+                dgvRooms.DefaultCellStyle.BackColor = Color.White;
+                dgvRooms.DefaultCellStyle.SelectionBackColor = Color.FromArgb(77, 124, 254);
+                dgvRooms.DefaultCellStyle.SelectionForeColor = Color.White;
+                dgvRooms.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+                dgvRooms.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
 
                 foreach (DataGridViewRow row in dgvRooms.Rows)
                 {
@@ -103,13 +112,13 @@ namespace Hotel_management_system.Forms
                     switch (status)
                     {
                         case "Available":
-                            row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(200, 255, 200);
+                            row.DefaultCellStyle.BackColor = Color.FromArgb(200, 255, 200);
                             break;
                         case "Occupied":
-                            row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 200, 200);
+                            row.DefaultCellStyle.BackColor = Color.FromArgb(255, 200, 200);
                             break;
                         case "Under Maintenance":
-                            row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 255, 200);
+                            row.DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 200);
                             break;
                     }
                 }
@@ -274,12 +283,12 @@ namespace Hotel_management_system.Forms
 
         private void ClearFields()
         {
-            txtRoomID.Clear();
-            txtRoomNumber.Clear();
+            txtRoomID.Text = "";
+            txtRoomNumber.Text = "";
             cmbRoomType.SelectedIndex = 0;
-            txtRatePerNight.Clear();
+            txtRatePerNight.Text = "";
             cmbStatus.SelectedIndex = 0;
-            txtDescription.Clear();
+            txtDescription.Text = "";
         }
     }
 }

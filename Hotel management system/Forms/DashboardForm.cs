@@ -42,6 +42,21 @@ namespace Hotel_management_system.Forms
             lblPageTitle.Text = pageTitle;
         }
 
+        private void ShowDashboard()
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+                activeForm = null;
+            }
+
+            panelContent.Controls.Clear();
+            DashboardOverviewControl dashboard = new DashboardOverviewControl();
+            dashboard.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(dashboard);
+            lblPageTitle.Text = "Dashboard";
+        }
+
         private void SetActiveButton(GlassNavButton button)
         {
             if (activeNavButton != null)
@@ -59,12 +74,7 @@ namespace Hotel_management_system.Forms
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            if (activeForm != null)
-            {
-                activeForm.Close();
-                activeForm = null;
-            }
-            lblPageTitle.Text = "Dashboard";
+            ShowDashboard();
             SetActiveButton(btnDashboard);
         }
 

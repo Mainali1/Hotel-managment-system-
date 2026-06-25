@@ -4,3 +4,16 @@ F:\Projects\collage\Hotel management system\Hotel management system\obj\Debug\Ho
 F:\Projects\collage\Hotel management system\Hotel management system\obj\Debug\Hotel management system.csproj.CoreCompileInputs.cache
 F:\Projects\collage\Hotel management system\Hotel management system\obj\Debug\Hotel_management_system.Forms.BillingForm.resources
 F:\Projects\collage\Hotel management system\Hotel management system\obj\Debug\Hotel_management_system.Forms.BookingForm.resources
+F:\Projects\collage\Hotel management system\Hotel management system\obj\Debug\Hotel_management_system.Forms.GuestForm.resources
+F:\Projects\collage\Hotel management system\Hotel management system\bin\Debug\Hotel management system.exe.config
+F:\Projects\collage\Hotel management system\Hotel management system\bin\Debug\Hotel management system.exe
+F:\Projects\collage\Hotel management system\Hotel management system\bin\Debug\Hotel management system.pdb
+F:\Projects\collage\Hotel management system\Hotel management system\bin\Debug\Guna.UI2.dll
+F:\Projects\collage\Hotel management system\Hotel management system\bin\Debug\Telerik.WinControls.dll
+F:\Projects\collage\Hotel management system\Hotel management system\bin\Debug\Telerik.WinControls.GridView.dll
+F:\Projects\collage\Hotel management system\Hotel management system\bin\Debug\Telerik.WinControls.UI.dll
+F:\Projects\collage\Hotel management system\Hotel management system\bin\Debug\TelerikCommon.dll
+F:\Projects\collage\Hotel management system\Hotel management system\obj\Debug\Hotel ma.60AE6BED.Up2Date
+F:\Projects\collage\Hotel management system\Hotel management system\obj\Debug\Hotel management system.exe
+F:\Projects\collage\Hotel management system\Hotel management system\obj\Debug\Hotel management system.pdb
+F:\Projects\collage\Hotel management system\Hotel management system\obj\Debug\Hotel_management_system.Forms.RoomForm.resources

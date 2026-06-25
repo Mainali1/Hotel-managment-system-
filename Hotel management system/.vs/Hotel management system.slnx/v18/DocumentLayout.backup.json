@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|f:\\projects\\collage\\hotel management system\\hotel management system\\forms\\bookingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|f:\\projects\\collage\\hotel management system\\hotel management system\\forms\\guestform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|solutionrelative:forms\\guestform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|F:\\Projects\\collage\\Hotel management system\\Hotel management system\\forms\\billingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|solutionrelative:forms\\billingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|F:\\Projects\\collage\\Hotel management system\\Hotel management system\\forms\\bookingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|solutionrelative:forms\\bookingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|F:\\Projects\\collage\\Hotel management system\\Hotel management system\\forms\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|solutionrelative:forms\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|f:\\projects\\collage\\hotel management system\\hotel management system\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|solutionrelative:forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|f:\\projects\\collage\\hotel management system\\hotel management system\\forms\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D0268871-307E-445B-99F8-07990F0AE52B}|Hotel management system.csproj|solutionrelative:forms\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,42 +30,66 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\Forms\\LoginForm.cs",
               "RelativeDocumentMoniker": "Forms\\LoginForm.cs",
               "ToolTip": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\Forms\\LoginForm.cs [Design]",
               "RelativeToolTip": "Forms\\LoginForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-18T02:48:32.74Z",
+              "WhenOpened": "2026-06-25T02:35:21.119Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "GuestForm.cs [Design]",
+              "DocumentMoniker": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\Forms\\GuestForm.cs",
+              "RelativeDocumentMoniker": "Forms\\GuestForm.cs",
+              "ToolTip": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\Forms\\GuestForm.cs [Design]",
+              "RelativeToolTip": "Forms\\GuestForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-25T02:33:00.801Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "DashboardForm.cs [Design]",
               "DocumentMoniker": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\Forms\\DashboardForm.cs",
               "RelativeDocumentMoniker": "Forms\\DashboardForm.cs",
               "ToolTip": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\Forms\\DashboardForm.cs [Design]",
               "RelativeToolTip": "Forms\\DashboardForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-18T02:40:24.215Z",
+              "WhenOpened": "2026-06-25T02:32:57.105Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "BookingForm.cs [Design]",
               "DocumentMoniker": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\Forms\\BookingForm.cs",
               "RelativeDocumentMoniker": "Forms\\BookingForm.cs",
               "ToolTip": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\Forms\\BookingForm.cs [Design]",
               "RelativeToolTip": "Forms\\BookingForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-18T02:40:13.114Z",
+              "WhenOpened": "2026-06-25T02:32:51.919Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BillingForm.cs [Design]",
+              "DocumentMoniker": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\Forms\\BillingForm.cs",
+              "RelativeDocumentMoniker": "Forms\\BillingForm.cs",
+              "ToolTip": "F:\\Projects\\collage\\Hotel management system\\Hotel management system\\Forms\\BillingForm.cs [Design]",
+              "RelativeToolTip": "Forms\\BillingForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-25T02:32:45.353Z",
               "EditorCaption": " [Design]"
             }
           ]
